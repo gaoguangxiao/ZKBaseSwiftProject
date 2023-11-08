@@ -1,8 +1,8 @@
-use_frameworks!
-
 platform :ios, '10.0'
 
 target 'ZKBaseSwiftProject_Example' do
+  use_frameworks!
+  
   pod 'ZKBaseSwiftProject', :path => '../'
 
   target 'ZKBaseSwiftProject_Tests' do
