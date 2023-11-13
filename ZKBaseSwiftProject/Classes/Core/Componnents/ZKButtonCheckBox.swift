@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZKButtonCheckBox: ZKButton {
+public class ZKButtonCheckBox: ZKButton {
 
     /*
     // Only override draw() if you perform custom drawing.

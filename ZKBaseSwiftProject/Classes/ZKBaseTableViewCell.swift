@@ -37,5 +37,5 @@ class ZKBaseTableViewCell: UITableViewCell {
 //        if yb?.responds(to: <#T##Selector!#>)
     }
     
-    lazy var lineView = UIView().zkBackgroundColor(.zkEBEBEB)
+    lazy var lineView = UIView()
 }

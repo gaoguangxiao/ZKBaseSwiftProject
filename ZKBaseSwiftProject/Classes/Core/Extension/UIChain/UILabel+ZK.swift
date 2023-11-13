@@ -12,7 +12,7 @@ import UIKit
   链式语法
 */
 
-extension UILabel {
+public extension UILabel {
     
     @discardableResult
     func zkFont(_ aFont: UIFont) -> Self {

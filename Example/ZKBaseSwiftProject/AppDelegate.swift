@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white//设置window颜色
         let tabbar = KJTabBarViewController()//初始化
-        self.window?.rootViewController = tabbar
+        let navtab = UINavigationController(rootViewController: tabbar)
+        self.window?.rootViewController = navtab
         self.window?.makeKeyAndVisible()
         
         return true

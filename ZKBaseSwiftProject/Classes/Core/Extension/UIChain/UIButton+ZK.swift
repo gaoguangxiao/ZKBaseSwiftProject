@@ -7,10 +7,9 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     
     //MARK: - 文字颜色
-    
     @discardableResult
     func zkNormalHigTDImg(_ imgName: String?) -> Self {
         let image = UIImage(named: imgName ?? "")
@@ -30,8 +29,7 @@ extension UIButton {
     //选中效果
     @discardableResult
     func zkSetTitleColor(_ color: UIColor?) -> Self {
-        setTitleColor(color, for: .highlighted)
-        setTitleColor(color, for: [.highlighted , .selected])
+        setTitleColor(color, for: .normal)
         return self
     }
     

@@ -6,31 +6,26 @@
 //
 
 import UIKit
-//import RxSwift
-import SnapKit
+
 open class ZKBaseViewController: UIViewController  {
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
         makeNavigationBar()
-        
     }
-    
 }
 
 
 extension ZKBaseViewController: ZKNavigationViewProtocol {
     
-    func navigationTitle() -> String? {
+    open func navigationTitle() -> String? {
         return nil
     }
     
-    func hiddenNavigationBar() -> Bool {
+    open func hiddenNavigationBar() -> Bool {
         return false
     }
     
-    func backItemAction() {
+    open func backItemAction() {
         self.navigationController?.popViewController(animated: true)
     }
     

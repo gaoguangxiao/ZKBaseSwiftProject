@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
     @discardableResult
     func zkImage(_ name: String) -> Self {

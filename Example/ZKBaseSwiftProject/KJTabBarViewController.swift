@@ -8,13 +8,14 @@
 import UIKit
 import ZKBaseSwiftProject
 
-class KJTabBarViewController : RHTabBarViewController {
+class KJTabBarViewController : ZKTabBarViewController {
     
     override func viewDidLoad() {
         
+        let login = KJLoginViewController()
         let vc = KJHomeViewController();
         let user = KJUserViewController()
-        self.viewControllers = [vc,user]
+        self.viewControllers = [login,vc,user]
         
         ConfigTabBarImage()
     }
@@ -23,9 +24,9 @@ class KJTabBarViewController : RHTabBarViewController {
     //    //配置tabbar图片
     func ConfigTabBarImage()  {
 
-        let itemNameSelectArray:[String] = ["tabbar_msg_1","tabbar_mine_1"]
-        let itemNameArray:[String] = ["tabbar_msg","tabbar_mine"]
-        let itemTitle : [String] = ["首页","我的"]
+//        let itemNameSelectArray:[String] = ["tabbar_msg_1","tabbar_mine_1"]
+//        let itemNameArray:[String] = ["tabbar_msg","tabbar_mine"]
+        let itemTitle : [String] = ["登录","首页","我的"]
         let titleSelectColor : UIColor = .hex(0x1B84F5)
         let titleColor : UIColor = .hex(0x818181)
         //背景颜色是统一的
@@ -49,14 +50,14 @@ class KJTabBarViewController : RHTabBarViewController {
         var count : Int = 0
         let items = self.tabBar.items
         for item in items! {
-            var image:UIImage = UIImage.init(named: itemNameArray[count])!
-            var selectImage : UIImage = UIImage.init(named: itemNameSelectArray[count])!
+//            var image:UIImage = UIImage.init(named: itemNameArray[count])!
+//            var selectImage : UIImage = UIImage.init(named: itemNameSelectArray[count])!
             
-            image =  image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal);
-            selectImage = selectImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+//            image =  image.withRenderingMode(UIImage.RenderingMode.alwaysOriginal);
+//            selectImage = selectImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             //                            item.badgeValue = "10"
-            item.selectedImage = selectImage
-            item.image         = image
+//            item.selectedImage = selectImage
+//            item.image         = image
             item.title         = itemTitle[count]
             item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:titleColor,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10.0)], for: .normal)
             item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:titleSelectColor,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10.0)], for:.selected)

@@ -10,6 +10,9 @@
 		1E6148872AB869D3003E651B /* KJTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148842AB869D3003E651B /* KJTabBarViewController.swift */; };
 		1E6148882AB869D3003E651B /* KJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148852AB869D3003E651B /* KJHomeViewController.swift */; };
 		1E6148892AB869D3003E651B /* KJUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148862AB869D3003E651B /* KJUserViewController.swift */; };
+		1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */; };
+		1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */; };
+		1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */; };
 		27039AA5AA889563A5577B69 /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D37132D8ACC2EE1FF969B21 /* Pods_ZKBaseSwiftProject_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -36,6 +39,10 @@
 		1E6148842AB869D3003E651B /* KJTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJTabBarViewController.swift; sourceTree = "<group>"; };
 		1E6148852AB869D3003E651B /* KJHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJHomeViewController.swift; sourceTree = "<group>"; };
 		1E6148862AB869D3003E651B /* KJUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJUserViewController.swift; sourceTree = "<group>"; };
+		1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KJLoginViewController.swift; sourceTree = "<group>"; };
+		1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSMSLoginController.swift; sourceTree = "<group>"; };
+		1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
+		1E7261BE2AFBA7E2008D5275 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4D37132D8ACC2EE1FF969B21 /* Pods_ZKBaseSwiftProject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKBaseSwiftProject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ZKBaseSwiftProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBaseSwiftProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,8 +109,12 @@
 				1E6148842AB869D3003E651B /* KJTabBarViewController.swift */,
 				1E6148852AB869D3003E651B /* KJHomeViewController.swift */,
 				1E6148862AB869D3003E651B /* KJUserViewController.swift */,
+				1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */,
+				1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */,
+				1E7261BE2AFBA7E2008D5275 /* PrefixHeader.pch */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -366,6 +377,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */,
+				1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */,
+				1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */,
 				1E6148892AB869D3003E651B /* KJUserViewController.swift in Sources */,
 				1E6148872AB869D3003E651B /* KJTabBarViewController.swift in Sources */,
 				1E6148882AB869D3003E651B /* KJHomeViewController.swift in Sources */,
@@ -522,8 +536,11 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -539,8 +556,11 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

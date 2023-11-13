@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZKButton: UIButton {
+open class ZKButton: UIButton {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -22,11 +22,12 @@ class ZKButton: UIButton {
         Init()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
         Init()
     }
+    
     func Init()  {
         
     }

@@ -5,13 +5,37 @@
 //  Created by 董建伟 on 2022/10/21.
 //
 
-
 import UIKit
+
+/**
+ let s = ZKVIew(UIVIew()).view
+ **/
+@dynamicMemberLookup
+public struct ZKView<View> {
+    
+    public let view : View
+    
+    public init(_ view: View) {
+        self.view = view
+    }
+    
+    public subscript<Value>(dynamicMember keyPath: WritableKeyPath<View, Value>) -> ((Value) -> ZKView<View>) {
+        // 获取到真正的对象
+        var subject = self.view
+        return { value in
+            // 把 value 指派给 subject
+            subject[keyPath: keyPath] = value
+            // 回传的类型是 ZKView<View> 而不是 View
+            // 因为使用ZKView来链式，而不是 View 本身
+            return ZKView(subject)
+        }
+    }
+}
 
 /**
  扩展初始化方法
  */
-extension UIView {
+public extension UIView {
     
     @discardableResult
     func zkBorder(_ color:UIColor, _ width:CGFloat) -> Self {

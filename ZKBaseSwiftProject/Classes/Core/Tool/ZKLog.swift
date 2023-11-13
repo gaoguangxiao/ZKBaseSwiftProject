@@ -76,7 +76,7 @@ class ZKWLog: NSObject {
     
 }
 
-func ZKLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
+public func ZKLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
     #if DEBUG
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif

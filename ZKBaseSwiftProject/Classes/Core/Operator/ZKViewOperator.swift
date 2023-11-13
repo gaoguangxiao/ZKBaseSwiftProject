@@ -11,28 +11,28 @@ import UIKit
 //MARK: 视图操作符
 /// 添加子视图
 @discardableResult
-func => (left: UIView, right: UIView) -> UIView {
+public func => (left: UIView, right: UIView) -> UIView {
     left.addSubview(right)
     return left
 }
 
 /// 添加二级子视图
 @discardableResult
-func ==> (left: UIView, right: UIView) -> UIView {
+public func ==> (left: UIView, right: UIView) -> UIView {
     left.addSubview(right)
     return left
 }
 
 /// 添加三级子视图
 @discardableResult
-func ===> (left: UIView, right: UIView) -> UIView {
+public func ===> (left: UIView, right: UIView) -> UIView {
     left.addSubview(right)
     return left
 }
 
 /// 添加四级子视图
 @discardableResult
-func ====> (left: UIView, right: UIView) -> UIView {
+public func ====> (left: UIView, right: UIView) -> UIView {
     left.addSubview(right)
     return left
 }

@@ -1,5 +1,5 @@
 //
-//  RHTabBarViewController.swift
+//  ZKTabBarViewController.swift
 //  乐科图
 //
 //  Created by ggx on 2017/7/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class RHTabBarViewController: UITabBarController {
+open class ZKTabBarViewController: UITabBarController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()

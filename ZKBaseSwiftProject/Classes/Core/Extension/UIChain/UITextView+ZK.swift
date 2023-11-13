@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextView {
+public extension UITextView {
     
     @discardableResult
     func zkText(_ t: String) -> Self {

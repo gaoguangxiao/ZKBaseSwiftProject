@@ -113,7 +113,7 @@ class ZKNavigationView: ZKBaseView {
         }
     }
     
-    private lazy var contentView:UIView = UIView().zkBackgroundColor(.clear)
+    private lazy var contentView:UIView = UIView()
     
     private lazy var backBtn = UIButton().zkNormalHigTDImg("navBack").zkAction(self, action: #selector(backBtnClick))
     
