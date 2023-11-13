@@ -6,7 +6,7 @@ PODS:
     - FBSnapshotTestCase/Core
   - GGXSwiftExtension (0.2.4)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.1.0):
+  - ZKBaseSwiftProject (0.1.2):
     - GGXSwiftExtension
     - SnapKit
 
@@ -28,7 +28,7 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   GGXSwiftExtension: 0a3f2346b3f62a1e513a29f263d1812b21692109
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: c9868955c42d1bec5304b8540680447d3c568fe3
+  ZKBaseSwiftProject: 1559e5d19c4212a1b7ede197519ae6caee81f414
 
 PODFILE CHECKSUM: 9645faca1e5605cc1ba5ff5c2e307e981c803149
 

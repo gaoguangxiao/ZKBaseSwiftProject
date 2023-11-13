@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.1.0",
-  "summary": "基于Swift功能，不包含，基于Fondation扩展",
+  "version": "0.1.2",
+  "summary": "完善链式编程",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "10.0"
