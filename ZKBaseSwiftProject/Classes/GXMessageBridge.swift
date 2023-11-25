@@ -8,12 +8,12 @@
 import Foundation
 import WebKit
 
-class GXMessageBridge: NSObject,WKScriptMessageHandler , WKScriptMessageHandlerWithReply{
+open class GXMessageBridge: NSObject,WKScriptMessageHandler , WKScriptMessageHandlerWithReply{
     weak var scriptDelegate: WKScriptMessageHandler?
     
     weak var scriptWithReplyDelegate: WKScriptMessageHandlerWithReply?
     
-    init(_ scriptDelegate: WKScriptMessageHandler) {
+    public init(_ scriptDelegate: WKScriptMessageHandler) {
         super.init()
         self.scriptDelegate = scriptDelegate
     }
@@ -23,11 +23,11 @@ class GXMessageBridge: NSObject,WKScriptMessageHandler , WKScriptMessageHandlerW
         self.scriptWithReplyDelegate = scriptWithReplyDelegate
     }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         scriptDelegate?.userContentController(userContentController, didReceive: message)
     }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
         if #available(iOS 14.0, *) {
             scriptWithReplyDelegate?.userContentController(userContentController, didReceive: message, replyHandler: replyHandler)
         } else {

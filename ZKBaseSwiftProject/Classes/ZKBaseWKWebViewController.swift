@@ -12,8 +12,14 @@ import GGXSwiftExtension
 
 let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 
+//定义JS交互闭包
+//public typealias WKScriptMessageClosure = (WKScriptMessage,Int) -> Void
+
 open class ZKBaseWKWebViewController: ZKBaseViewController {
 
+    //执行回调
+    public var scriptMessageClose: WKScriptMessageClosure?
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(webView)
@@ -26,6 +32,29 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
             maker.trailing.equalTo(0)
             maker.top.equalTo(TopBarHeight)
             maker.bottom.equalTo(0)
+        }
+    }
+    
+    //自定义UA
+    func setUA(customUserAgent: String) -> Self {
+        self.webView.customUserAgent = customUserAgent
+        return self
+    }
+    
+    func addUserScript(forSource source: String) -> Self {
+        let userScript: WKUserScript = WKUserScript.init(source: source, injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: false)
+        webView.configuration.userContentController.addUserScript(userScript)
+        return self
+    }
+    
+    func addScriptMessage(name: String,jsBridge:@escaping WKScriptMessageClosure) {
+        let userContentController = webView.configuration.userContentController
+        if #available(iOS 14, *){
+            let messageBridge = GXMessageBridge(scriptWithReplyDelegate: self)
+            userContentController.addScriptMessageHandler(messageBridge, contentWorld: .page, name: name)
+        } else {
+            let messageBridge = GXMessageBridge(self)
+            userContentController.add(messageBridge, name: name)
         }
     }
     
@@ -131,4 +160,23 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         }
         ZKLog("加载失败 error = \(error)")
     }
+}
+
+extension ZKBaseWKWebViewController: WKScriptMessageHandler , WKScriptMessageHandlerWithReply{
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("old iOS 14---\(message.body)")
+    }
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
+        //        XXX.handJS.re
+        if let close = self.scriptMessageClose {
+            close(message,0)
+        }
+        
+        //完成回调
+        //        replyHandler(,)
+        //        print("---\(message.body)")
+    }
+    
+    //处理JS->iOS 交给bridge处理
 }
