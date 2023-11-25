@@ -22,13 +22,9 @@ public struct UserDefaultWrapper<T> {
     public var wrappedValue: T {
         get {
             let value = UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
-            
-            print("获取状态\(value)--\(key)")
-//            UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
             return value
         }
         set {
-            print("保存状态\(newValue)--\(key)")
             UserDefaults.standard.set(newValue, forKey: key)
             UserDefaults.standard.synchronize()
         }

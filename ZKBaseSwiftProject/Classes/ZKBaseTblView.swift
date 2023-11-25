@@ -9,7 +9,7 @@ import UIKit
 
 open class ZKBaseTblView: ZKBaseView {
 
-    var dataArray: [Any] = []
+    public var dataArray: [Any] = []
     
     var tableView: UITableView?
     
@@ -51,15 +51,15 @@ open class ZKBaseTblView: ZKBaseView {
 }
 
 extension ZKBaseTblView : UITableViewDelegate,UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
