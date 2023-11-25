@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@objc protocol ZKNavigationViewProtocol where Self: UIViewController {
+@objc public protocol ZKNavigationViewProtocol where Self: UIViewController {
     
     func hiddenNavigationBar() -> Bool
     
@@ -22,7 +22,7 @@ import UIKit
     
 }
 
-extension ZKNavigationViewProtocol {
+public extension ZKNavigationViewProtocol {
     
     func makeNavigationBar() {
         view.backgroundColor = .zkF7F8FA

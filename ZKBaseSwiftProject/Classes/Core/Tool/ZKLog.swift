@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ZKWLog: NSObject {
+public class ZKWLog: NSObject {
 
     static var logPath = ""
 
@@ -46,7 +46,7 @@ class ZKWLog: NSObject {
         return content ?? ""
     }
     
-    static func clear() {
+    public static func clear() {
         FileManager.removefile(atPath: logPath)
         //重新创建log文件
         let result = FileManager.createFile(atPath: ZKWLog.logPath)
@@ -82,7 +82,7 @@ public func ZKLog<T>( _ message: T, file: String = #file, method: String = #func
     #endif
 }
 
-func ZKSLog( _ message: String, file: String = #file, method: String = #function, line: Int = #line){
+public func ZKSLog( _ message: String, file: String = #file, method: String = #function, line: Int = #line){
     #if DEBUG
     ZKWLog.Log(message)
 //    print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")

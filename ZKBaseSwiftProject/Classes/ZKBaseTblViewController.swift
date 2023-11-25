@@ -7,13 +7,13 @@
 
 import UIKit
 import GGXSwiftExtension
-class ZKBaseTblViewController: ZKBaseViewController {
+open class ZKBaseTblViewController: ZKBaseViewController {
 
-    var dataArray: [Any] = []
+    public var dataArray: [Any] = []
     
     var tableView: UITableView?
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -48,15 +48,15 @@ class ZKBaseTblViewController: ZKBaseViewController {
 
 
 extension ZKBaseTblViewController : UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ZKBaseTblView: ZKBaseView {
+open class ZKBaseTblView: ZKBaseView {
 
     var dataArray: [Any] = []
     
     var tableView: UITableView?
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     
         self => tbl
@@ -26,7 +26,7 @@ class ZKBaseTblView: ZKBaseView {
         tableView = tbl
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -51,15 +51,15 @@ class ZKBaseTblView: ZKBaseView {
 }
 
 extension ZKBaseTblView : UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

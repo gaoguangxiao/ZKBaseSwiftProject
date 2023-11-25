@@ -16,7 +16,6 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.addSubview(webView)
         self.buildUI()
     }

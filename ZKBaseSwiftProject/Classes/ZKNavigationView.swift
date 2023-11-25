@@ -6,7 +6,7 @@
 
 import UIKit
 import GGXSwiftExtension
-class ZKNavigationView: ZKBaseView {
+open class ZKNavigationView: ZKBaseView {
     /// 标题
     public var title: String? {
         didSet {
@@ -96,7 +96,7 @@ class ZKNavigationView: ZKBaseView {
         }
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: TopBarHeight)
         addSubview(contentView)
@@ -117,7 +117,7 @@ class ZKNavigationView: ZKBaseView {
     
     private lazy var backBtn = UIButton().zkNormalHigTDImg("navBack").zkAction(self, action: #selector(backBtnClick))
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
