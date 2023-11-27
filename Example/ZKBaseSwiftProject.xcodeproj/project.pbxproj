@@ -10,6 +10,8 @@
 		1E6148872AB869D3003E651B /* KJTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148842AB869D3003E651B /* KJTabBarViewController.swift */; };
 		1E6148882AB869D3003E651B /* KJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148852AB869D3003E651B /* KJHomeViewController.swift */; };
 		1E6148892AB869D3003E651B /* KJUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6148862AB869D3003E651B /* KJUserViewController.swift */; };
+		1E63B2782B14462000EE11BA /* JKWebVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63B2772B14462000EE11BA /* JKWebVc.swift */; };
+		1E63B27A2B1487E100EE11BA /* JKWebVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E63B2792B1487E100EE11BA /* JKWebVc.xib */; };
 		1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */; };
 		1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */; };
 		1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */; };
@@ -39,6 +41,8 @@
 		1E6148842AB869D3003E651B /* KJTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJTabBarViewController.swift; sourceTree = "<group>"; };
 		1E6148852AB869D3003E651B /* KJHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJHomeViewController.swift; sourceTree = "<group>"; };
 		1E6148862AB869D3003E651B /* KJUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KJUserViewController.swift; sourceTree = "<group>"; };
+		1E63B2772B14462000EE11BA /* JKWebVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKWebVc.swift; sourceTree = "<group>"; };
+		1E63B2792B1487E100EE11BA /* JKWebVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JKWebVc.xib; sourceTree = "<group>"; };
 		1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KJLoginViewController.swift; sourceTree = "<group>"; };
 		1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSMSLoginController.swift; sourceTree = "<group>"; };
 		1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				1E6148862AB869D3003E651B /* KJUserViewController.swift */,
 				1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */,
 				1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */,
+				1E63B2772B14462000EE11BA /* JKWebVc.swift */,
+				1E63B2792B1487E100EE11BA /* JKWebVc.xib */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */,
@@ -269,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E63B27A2B1487E100EE11BA /* JKWebVc.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -311,12 +318,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZKBaseSwiftProject_Example/Pods-ZKBaseSwiftProject_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GGXSwiftExtension/GGXSwiftExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ZKBaseSwiftProject/ZKBaseSwiftProject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GGXSwiftExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZKBaseSwiftProject.framework",
 			);
@@ -376,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E63B2782B14462000EE11BA /* JKWebVc.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */,
 				1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */,

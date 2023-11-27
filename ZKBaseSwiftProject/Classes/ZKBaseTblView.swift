@@ -11,7 +11,7 @@ open class ZKBaseTblView: ZKBaseView {
 
     public var dataArray: [Any] = []
     
-    var tableView: UITableView?
+    public var tableView: UITableView?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

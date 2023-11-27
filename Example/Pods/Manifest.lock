@@ -5,9 +5,11 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - GGXSwiftExtension (0.2.4)
+  - HandyJSON (5.0.2)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.1.6):
+  - ZKBaseSwiftProject (0.1.7):
     - GGXSwiftExtension
+    - HandyJSON
     - SnapKit
 
 DEPENDENCIES:
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - FBSnapshotTestCase
     - GGXSwiftExtension
+    - HandyJSON
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -27,9 +30,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   GGXSwiftExtension: 0a3f2346b3f62a1e513a29f263d1812b21692109
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 461a2cb0db22e8a73027ae77e554507cae68ccd4
+  ZKBaseSwiftProject: f3f2c248d25eff0ca281a3fc7390064ae172b4b7
 
 PODFILE CHECKSUM: 9645faca1e5605cc1ba5ff5c2e307e981c803149
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.14.3

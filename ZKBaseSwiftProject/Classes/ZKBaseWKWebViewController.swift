@@ -12,13 +12,19 @@ import GGXSwiftExtension
 
 let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 
-//定义JS交互闭包
-//public typealias WKScriptMessageClosure = (WKScriptMessage,Int) -> Void
+public protocol WKWebScriptMessageDelegate: NSObjectProtocol {
+    
+    func zkuserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage);
+    
+    @available(iOS 14.0, *)
+    func zkUserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void);
+        
+}
 
 open class ZKBaseWKWebViewController: ZKBaseViewController {
-
+    
     //执行回调
-    public var scriptMessageClose: WKScriptMessageClosure?
+    public weak var scriptMessageDelegate: WKWebScriptMessageDelegate?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,27 +42,9 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     }
     
     //自定义UA
-//    func setUA(customUserAgent: String) -> Self {
-//        self.webView.customUserAgent = customUserAgent
-//        return self
-//    }
-//    
-//    func addUserScript(forSource source: String) -> Self {
-//        let userScript: WKUserScript = WKUserScript.init(source: source, injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: false)
-//        webView.configuration.userContentController.addUserScript(userScript)
-//        return self
-//    }
-//    
-//    func addScriptMessage(name: String,jsBridge:@escaping WKScriptMessageClosure) {
-//        let userContentController = webView.configuration.userContentController
-//        if #available(iOS 14, *){
-//            let messageBridge = GXMessageBridge(scriptWithReplyDelegate: self)
-//            userContentController.addScriptMessageHandler(messageBridge, contentWorld: .page, name: name)
-//        } else {
-//            let messageBridge = GXMessageBridge(self)
-//            userContentController.add(messageBridge, name: name)
-//        }
-//    }
+    public func setUA(customUserAgent: String) {
+        self.webView.customUserAgent = customUserAgent
+    }
     
     deinit {
         print("\(self)dealloc")
@@ -75,7 +63,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
                 pagePreferences.allowsContentJavaScript = true
             } else {
                 // Fallback on earlier versions
-//                pagePreferences.preferredContentMode = .desktop
+                //                pagePreferences.preferredContentMode = .desktop
             }
             conf.defaultWebpagePreferences = pagePreferences
         } else {
@@ -86,7 +74,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         conf.userContentController = WKUserContentController()
         //配置
         conf.allowsInlineMediaPlayback = true
-//        conf.requiresUserActionForMediaPlayback = false
+        //        conf.requiresUserActionForMediaPlayback = false
         conf.allowsAirPlayForMediaPlayback = false
         _userContentController = conf.userContentController
         
@@ -97,7 +85,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         } else {
             // Fallback on earlier versions
         }
-//        webView.scrollView.delegate = self
+        //        webView.scrollView.delegate = self
         webView.scrollView.bounces = false
         webView.allowsLinkPreview = false
         webView.isOpaque = false
@@ -137,7 +125,7 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
     
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         ZKLog("web view begin loading main fram ...")
-
+        
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -153,7 +141,7 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
     }
     
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-       
+        
         let code = (error as NSError).code
         if  code == NSURLErrorCancelled {
             return
@@ -162,21 +150,47 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
     }
 }
 
-//extension ZKBaseWKWebViewController: WKScriptMessageHandler , WKScriptMessageHandlerWithReply{
-//    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//        print("old iOS 14---\(message.body)")
-//    }
-//    
-//    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
-//        //        XXX.handJS.re
-//        if let close = self.scriptMessageClose {
-//            close(message,0)
-//        }
+public extension ZKBaseWKWebViewController {
+    
+    func addUserScript(forSource source: String,injectionTime: WKUserScriptInjectionTime = .atDocumentStart, forMainFrameOnly: Bool = false) {
+        let userScript: WKUserScript = WKUserScript.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly)
+        webView.configuration.userContentController.addUserScript(userScript)
+    }
+    
+    func addScriptMessage(name: String) {
+        let userContentController = webView.configuration.userContentController
+        if #available(iOS 14, *){
+            let messageBridge = GXMessageBridge(scriptWithReplyDelegate: self)
+            userContentController.addScriptMessageHandler(messageBridge, contentWorld: .page, name: name)
+        } else {
+            let messageBridge = GXMessageBridge(self)
+            userContentController.add(messageBridge, name: name)
+        }
+    }
+    
+    func evaluateJavaScript(_ javaScriptString: String) {
+        self.webView.evaluateJavaScript(javaScriptString)
+    }
+}
+
+
+extension ZKBaseWKWebViewController: WKScriptMessageHandler , WKScriptMessageHandlerWithReply {
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        self.scriptMessageDelegate?.zkuserContentController(userContentController, didReceive: message)
+    }
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
+        if #available(iOS 14.0, *) {
+            self.scriptMessageDelegate?.zkUserContentController(userContentController, didReceive: message, replyHandler: replyHandler)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+}
+
+//extension ZKBaseWKWebViewController: WKWebScriptMessageDelegate {
+//    open func zkUserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
 //        
-//        //完成回调
-//        //        replyHandler(,)
-//        //        print("---\(message.body)")
 //    }
-//    
-//    //处理JS->iOS 交给bridge处理
 //}
