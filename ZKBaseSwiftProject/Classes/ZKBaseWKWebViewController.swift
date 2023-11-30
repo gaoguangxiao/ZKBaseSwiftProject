@@ -32,7 +32,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         self.buildUI()
     }
     
-    func buildUI() {
+    open func buildUI() {
         webView.snp.makeConstraints { (maker) in
             maker.leading.equalTo(0)
             maker.trailing.equalTo(0)
@@ -74,7 +74,6 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         conf.userContentController = WKUserContentController()
         //配置
         conf.allowsInlineMediaPlayback = true
-        //        conf.requiresUserActionForMediaPlayback = false
         conf.allowsAirPlayForMediaPlayback = false
         _userContentController = conf.userContentController
         

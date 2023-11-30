@@ -10,7 +10,7 @@ import Foundation
 import GGXSwiftExtension
 
 public enum PTDebugViewButtonEvent {
-    case ChangeUrl(UIView)
+    case ChangeUrl(PTDebugView)
     case ReloadWeb(String)
 }
 
@@ -27,7 +27,7 @@ public class PTDebugView: UIView {
     public var reloadButtonEvent :DebugButtonEvent?
     
     var defaultApiUrl: String = ""
-    var baseWebUrl: String = ""
+    public var baseWebUrl: String = ""
     
     public static func addLog(_ log : String) {
         let wStr = "\n-------\(Date.getCurrentDateStr(SECOND_FORMAT))日志-------\n" + log
