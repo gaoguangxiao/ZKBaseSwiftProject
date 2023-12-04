@@ -12,7 +12,7 @@ public class ZKWLog: NSObject {
     static var logPath = ""
 
     @discardableResult
-    override init() {
+    public override init() {
         if let cachesPath = FileManager.cachesPath {
             ZKWLog.logPath = cachesPath + "/" + "app.log"
             ZKLog("log文件：" + ZKWLog.logPath)

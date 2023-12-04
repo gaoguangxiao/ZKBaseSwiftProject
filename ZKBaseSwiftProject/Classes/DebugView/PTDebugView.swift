@@ -26,7 +26,7 @@ public class PTDebugView: UIView {
     
     public var reloadButtonEvent :DebugButtonEvent?
     
-    var defaultApiUrl: String = ""
+    public var defaultApiUrl: String = ""
     public var baseWebUrl: String = ""
     
     public static func addLog(_ log : String) {

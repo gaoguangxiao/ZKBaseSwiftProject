@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = '修复-Web外部访问Frame更新'
 
 # This description is used to generate tags and improve search results.

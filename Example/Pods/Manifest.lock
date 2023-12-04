@@ -7,7 +7,7 @@ PODS:
   - GGXSwiftExtension (0.2.4)
   - HandyJSON (5.0.2)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.1.8):
+  - ZKBaseSwiftProject (0.1.9):
     - GGXSwiftExtension
     - HandyJSON
     - SnapKit
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   GGXSwiftExtension: 0a3f2346b3f62a1e513a29f263d1812b21692109
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 954e3dcd595c0f25ce497bd4d2d8e4812d3aa1a4
+  ZKBaseSwiftProject: 6441606310ddd33d636e1729e05b5197e6a69887
 
 PODFILE CHECKSUM: 9645faca1e5605cc1ba5ff5c2e307e981c803149
 
