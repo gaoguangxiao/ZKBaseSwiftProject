@@ -131,8 +131,8 @@ public class PTDebugView: UIView {
         self.isHidden = true
         self.debugTextView.text = ""
         
-        if let reloadClosure = self.reloadButtonEvent {
-            reloadClosure(.ReloadWeb(""))
+        if self.clickButtonEvent != nil {
+            self.clickButtonEvent?(.ReloadWeb(self.baseWebUrl))
         }
     }
     

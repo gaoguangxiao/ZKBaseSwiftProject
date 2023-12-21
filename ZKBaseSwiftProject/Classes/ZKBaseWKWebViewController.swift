@@ -105,7 +105,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
             
             if let url = URL.init(string: urlString) {
                 ZKLog("web url is: \(urlString)")
-                let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
                 webView.load(request)
             }
         }

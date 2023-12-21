@@ -6,10 +6,12 @@ PODS:
     - FBSnapshotTestCase/Core
   - GGXSwiftExtension (0.2.4)
   - HandyJSON (5.0.2)
+  - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
   - ZKBaseSwiftProject (0.1.9):
     - GGXSwiftExtension
     - HandyJSON
+    - ReachabilitySwift
     - SnapKit
 
 DEPENDENCIES:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - FBSnapshotTestCase
     - GGXSwiftExtension
     - HandyJSON
+    - ReachabilitySwift
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -31,8 +34,9 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   GGXSwiftExtension: 0a3f2346b3f62a1e513a29f263d1812b21692109
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 6441606310ddd33d636e1729e05b5197e6a69887
+  ZKBaseSwiftProject: 781cbe642f2e8f748cb0270a88faf0e71f0e507c
 
 PODFILE CHECKSUM: 9645faca1e5605cc1ba5ff5c2e307e981c803149
 
