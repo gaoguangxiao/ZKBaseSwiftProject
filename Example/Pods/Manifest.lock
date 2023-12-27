@@ -4,11 +4,11 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - GGXSwiftExtension (0.2.4)
+  - GGXSwiftExtension (0.2.8)
   - HandyJSON (5.0.2)
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.1.9):
+  - ZKBaseSwiftProject (0.2.1):
     - GGXSwiftExtension
     - HandyJSON
     - ReachabilitySwift
@@ -32,12 +32,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  GGXSwiftExtension: 0a3f2346b3f62a1e513a29f263d1812b21692109
+  GGXSwiftExtension: c8f42b413b4e002114de0e67d6e8cd20cce2c1ad
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 781cbe642f2e8f748cb0270a88faf0e71f0e507c
+  ZKBaseSwiftProject: 5085389e367b2591a447ace1e9b83ee8f6e19594
 
-PODFILE CHECKSUM: 9645faca1e5605cc1ba5ff5c2e307e981c803149
+PODFILE CHECKSUM: a0d7fcec2707b521cf724780a8d1d4065b2a9c8f
 
 COCOAPODS: 1.14.3

@@ -33,11 +33,16 @@ public struct UserDefaultWrapper<T> {
 
 public enum Keys {
     public static let token = "token"
+    public static let agreePrivacyPolicy = "agreePrivacyPolicy"
 }
 
 public extension UserDefaults {
     @UserDefaultWrapper(key: Keys.token, defaultValue: "")
     static var token:String
+    
+    /// 隐私协议弹框
+    @UserDefaultWrapper(key: Keys.agreePrivacyPolicy, defaultValue: false)
+    static var agreePrivacyPolicy: Bool
 }
 
 

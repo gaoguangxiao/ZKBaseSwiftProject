@@ -115,7 +115,7 @@ open class ZKNavigationView: ZKBaseView {
     
     private lazy var contentView:UIView = UIView()
     
-    private lazy var backBtn = UIButton().zkNormalHigTDImg("navBack").zkAction(self, action: #selector(backBtnClick))
+    public lazy var backBtn = UIButton().zkNormalHigTDImg("navBack").zkAction(self, action: #selector(backBtnClick))
     
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
