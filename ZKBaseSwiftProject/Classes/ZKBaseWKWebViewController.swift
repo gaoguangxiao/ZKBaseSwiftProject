@@ -147,6 +147,17 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         }
         ZKLog("加载失败 error = \(error)")
     }
+    
+    public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        if challenge.protectionSpace.authenticationMethod
+            == NSURLAuthenticationMethodServerTrust {
+            // 告诉服务器，客户端信任证书
+            // 创建凭据对象
+            let card = URLCredential.init(trust: challenge.protectionSpace.serverTrust!)
+            // 告诉服务器信任证书
+            completionHandler(URLSession.AuthChallengeDisposition.useCredential, card)
+        }
+    }
 }
 
 public extension ZKBaseWKWebViewController {
