@@ -5,7 +5,8 @@ target 'ZKBaseSwiftProject_Example' do
   
   pod 'ZKBaseSwiftProject', :path => '../'
 
-#  pod 'GGXSwiftExtension', :path => '/Users/gaoguangxiao/Documents/GitHub/ggxswiftexten'
+  pod 'GGXSwiftExtension', :path => '/Users/gaoguangxiao/Documents/GitHub/ggxswiftexten'
+  
   target 'ZKBaseSwiftProject_Tests' do
     inherit! :search_paths
 

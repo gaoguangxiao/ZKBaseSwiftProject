@@ -89,6 +89,7 @@ public class PTDebugView: UIView {
         self.addButton(title: "清除log", right: 190+90, action: #selector(clearLog))
         self.addButton(title: "打开bridge", right: 190+90+90, action: #selector(openBridgeCall))
         self.addButton(title: "打开原生调试器", right: 10,top: 60, action: #selector(openAppTestVc))
+        self.addButton(title: "清WebStore", right: 100, top: 60,action: #selector(clearWebCache))
 //        self.addButton(title: "启用离线包", right: 10, top: 60,action: #selector(openOfflineCache))
 //        self.addButton(title: "禁用离线包", right: 100, top:60,action: #selector(closeOfflineCache))
 //        self.addButton(title: "清除离线包", right: 190, top: 60, action: #selector(clearOfflineCache))
@@ -156,6 +157,10 @@ public class PTDebugView: UIView {
 //        }
 //        let jsTestVc = RSBridgeTestWKViewController()
 //        homepageVc.navigationController?.pushViewController(jsTestVc, animated: true)
+    }
+    
+    @objc func clearWebCache() {
+        ZKUtils.removeWebsiteDataStore()
     }
     
     @objc func openAppTestVc(){

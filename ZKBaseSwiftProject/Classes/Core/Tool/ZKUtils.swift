@@ -7,11 +7,14 @@
 
 import Foundation
 import GGXSwiftExtension
+import WebKit
 
 public struct ZKUtils {
     
     public static func getbaseUA(name: String) -> String {
-        return deviceUserAgent + " \(name)/"
+        let appVersion = kAppVersion ?? ""
+        let appBuildVersion = kAppBuildVersion ?? ""
+        return deviceUserAgent + " \(name)/" + appVersion + " Build/" + appBuildVersion +  " Factory/apple"
     }
     
     public static var deviceUserAgent: String {
@@ -22,11 +25,11 @@ public struct ZKUtils {
         } else {
             systemName = "iPhone OS"
         }
-        var newUA = "Mozilla/5.0 (\(UIDevice.current.model); CPU \(systemName) \(systemVersion) like Mac OS X; \(UIDevice.modelName)) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
-        let appVersion = kAppVersion ?? ""
-        let appBuildVersion = kAppBuildVersion ?? ""
-        newUA += appVersion + " Build/" + appBuildVersion +  " Factory/apple"
+        let newUA = "Mozilla/5.0 (\(UIDevice.current.model); CPU \(systemName) \(systemVersion) like Mac OS X; \(UIDevice.modelName)) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
         return newUA
     }
     
+    static func removeWebsiteDataStore() {
+        WKWebsiteDataStore.removeWebsiteDataStore()
+    }
 }
