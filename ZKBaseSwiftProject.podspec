@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
   s.version          = '0.2.4'
-  s.summary          = '完善UA-Name设'
+  s.summary          = '完善UA-Name'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
