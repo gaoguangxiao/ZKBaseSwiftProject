@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - GGXSwiftExtension (0.3.2)
+  - GGXSwiftExtension (0.3.3)
   - HandyJSON (5.0.2)
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
@@ -32,11 +32,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  GGXSwiftExtension: aa30a3f08afc0c60f60573ea951eafcb8b2e75da
+  GGXSwiftExtension: fb0eb52ed0c6e76ceb65a9d69d3810c16cacdbbe
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 51567b49746ae5796036e15d1549b60764fcdcec
+  ZKBaseSwiftProject: 7b7b03e74351bcf42d1c539b9f9ba8ed09721115
 
 PODFILE CHECKSUM: 6d2832dff92461bd227174a958aff8ad0f8d0bd9
 
