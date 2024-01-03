@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.2.4",
-  "summary": "完善UA-Name",
+  "version": "0.2.5",
+  "summary": "测试提交",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.2.4"
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "10.0"

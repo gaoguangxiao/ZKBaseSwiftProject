@@ -30,6 +30,6 @@ public struct ZKUtils {
     }
     
     static func removeWebsiteDataStore() {
-        WKWebsiteDataStore.removeWebsiteDataStore()
+//        WKWebsiteDataStore.removeWebsiteDataStore()
     }
 }
