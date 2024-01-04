@@ -50,11 +50,11 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         print("\(self)dealloc")
     }
     
+    public var schemeHandler: ZKURLSchemeHandler?
     public var _userContentController: WKUserContentController?
     
     public lazy var webView: WKWebView = {
         let conf = WKWebViewConfiguration()
-        
         let preferences = WKPreferences.init()
         preferences.javaScriptCanOpenWindowsAutomatically = true
         if #available(iOS 13.0, *) {
@@ -75,8 +75,17 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         //配置
         conf.allowsInlineMediaPlayback = true
         conf.allowsAirPlayForMediaPlayback = false
-        _userContentController = conf.userContentController
         
+//      //核心库开启网络拦截
+        if #available(iOS 11.0, *) {
+            if let schemeHandler = schemeHandler {
+                conf.addProxyConfig(handler: schemeHandler)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        _userContentController = conf.userContentController
         let webView = WKWebView(frame: .zero, configuration: conf)
         webView.navigationDelegate = self
         if #available(iOS 16.4, *) {

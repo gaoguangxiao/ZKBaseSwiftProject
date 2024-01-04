@@ -21,7 +21,7 @@ var web_log = ""
 public class PTDebugView: UIView {
     
     private var debugTextView =  UITextView.init().zkFont(.regular16)
-
+    
     private var clickButtonEvent :((PTDebugViewButtonEvent)->Void)? = nil
     
     public var reloadButtonEvent :DebugButtonEvent?
@@ -30,11 +30,12 @@ public class PTDebugView: UIView {
     public var baseWebUrl: String = ""
     
     public static func addLog(_ log : String) {
+#if DEBUG
         let wStr = "\n-------\(Date.getCurrentDateStr(SECOND_FORMAT))日志-------\n" + log
         web_log = wStr + web_log
+#endif
     }
-    
-    
+        
     public func supportIn(superView: UIView ,apiURL: String = "", debugEvent :@escaping (PTDebugViewButtonEvent)->Void) {
         superView.addSubview(self)
         self.clickButtonEvent = debugEvent
@@ -47,9 +48,9 @@ public class PTDebugView: UIView {
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(clickEvent))
         tap.numberOfTapsRequired = 6
-//        tap.numberOfTouchesRequired = 2
+        //        tap.numberOfTouchesRequired = 2
         superView.addGestureRecognizer(tap)
-
+        
     }
     
     @objc func clickEvent( _ tap : UIGestureRecognizer) {
@@ -61,7 +62,7 @@ public class PTDebugView: UIView {
         if translation.x < 200 && translation.y > (windowHeight ?? 600) - 200 {
             if self.isHidden {
                 self.isHidden = false
-//                self.superview?.bringSubviewToFront(self)
+                //                self.superview?.bringSubviewToFront(self)
                 let url = "Base URL : " + defaultApiUrl + "\n"
                 let weburl = "Web  URL : " + baseWebUrl  + "\n"
                 let appVersion = kAppVersion ?? ""
@@ -82,7 +83,7 @@ public class PTDebugView: UIView {
             maker.top.equalTo(10)
             maker.right.equalTo(0)
         }
-
+        
         self.addButton(title: "隐藏", right: 10, action: #selector(closeDebugView))
         self.addButton(title: "刷新", right: 100, action: #selector(reload))
         self.addButton(title: "切换地址", right: 190, action: #selector(changeUrl))
@@ -90,12 +91,12 @@ public class PTDebugView: UIView {
         self.addButton(title: "打开bridge", right: 190+90+90, action: #selector(openBridgeCall))
         self.addButton(title: "打开原生调试器", right: 10,top: 60, action: #selector(openAppTestVc))
         self.addButton(title: "清WebStore", right: 100, top: 60,action: #selector(clearWebCache))
-//        self.addButton(title: "启用离线包", right: 10, top: 60,action: #selector(openOfflineCache))
-//        self.addButton(title: "禁用离线包", right: 100, top:60,action: #selector(closeOfflineCache))
-//        self.addButton(title: "清除离线包", right: 190, top: 60, action: #selector(clearOfflineCache))
+        //        self.addButton(title: "启用离线包", right: 10, top: 60,action: #selector(openOfflineCache))
+        //        self.addButton(title: "禁用离线包", right: 100, top:60,action: #selector(closeOfflineCache))
+        //        self.addButton(title: "清除离线包", right: 190, top: 60, action: #selector(clearOfflineCache))
     }
     
-   
+    
     private func addButton(title:String, right:CGFloat,top: CGFloat = 10,action: Selector) {
         let button = UIButton.init()
         button.setTitle(title, for: UIControl.State.normal)
@@ -124,7 +125,7 @@ public class PTDebugView: UIView {
     
     func openDebugView (){
         self.isHidden = false
-//        self.debugTextView.text = ZKWLog.read
+        //        self.debugTextView.text = ZKWLog.read
     }
     
     @objc func reload (){
@@ -148,15 +149,15 @@ public class PTDebugView: UIView {
         //关闭调试
         closeDebugView()
         
-//        UIApplication.rootWindow?.addSubview(testBridgeView)
-//        testBridgeView.snp.makeConstraints { make in
-//            make.left.equalTo(10)
-//            make.width.equalTo(200)
-//            make.height.equalTo(400)
-//            make.centerY.equalToSuperview()
-//        }
-//        let jsTestVc = RSBridgeTestWKViewController()
-//        homepageVc.navigationController?.pushViewController(jsTestVc, animated: true)
+        //        UIApplication.rootWindow?.addSubview(testBridgeView)
+        //        testBridgeView.snp.makeConstraints { make in
+        //            make.left.equalTo(10)
+        //            make.width.equalTo(200)
+        //            make.height.equalTo(400)
+        //            make.centerY.equalToSuperview()
+        //        }
+        //        let jsTestVc = RSBridgeTestWKViewController()
+        //        homepageVc.navigationController?.pushViewController(jsTestVc, animated: true)
     }
     
     @objc func clearWebCache() {
@@ -164,32 +165,32 @@ public class PTDebugView: UIView {
     }
     
     @objc func openAppTestVc(){
-//        let jsTestVc = RSTestViewController()
-//        homepageVc.navigationController?.pushViewController(jsTestVc, animated: true)
+        //        let jsTestVc = RSTestViewController()
+        //        homepageVc.navigationController?.pushViewController(jsTestVc, animated: true)
     }
     
     @objc func clearLog (){
         web_log = ""
         self.debugTextView.text = ""
-//        ZKWLog.clear()
+        //        ZKWLog.clear()
     }
     
     @objc func openOfflineCache (){
-//        URLProtocol.registerClass(PTURLProtocol.self)
-//        URLProtocol.wk_registerScheme("http")
-//        URLProtocol.wk_registerScheme("https")
-//        HUD.flash("启用成功")
+        //        URLProtocol.registerClass(PTURLProtocol.self)
+        //        URLProtocol.wk_registerScheme("http")
+        //        URLProtocol.wk_registerScheme("https")
+        //        HUD.flash("启用成功")
     }
     
     @objc func closeOfflineCache (){
-//        URLProtocol.unregisterClass(PTURLProtocol.self)
-//        URLProtocol.wk_unregisterScheme("http")
-//        URLProtocol.wk_unregisterScheme("https")
-//        HUD.flash("禁用成功")
+        //        URLProtocol.unregisterClass(PTURLProtocol.self)
+        //        URLProtocol.wk_unregisterScheme("http")
+        //        URLProtocol.wk_unregisterScheme("https")
+        //        HUD.flash("禁用成功")
     }
     
     @objc func clearOfflineCache (){
         //PTHybridCache.share.removeAll()
-//        HUD.flash("清除缓存完成")
+        //        HUD.flash("清除缓存完成")
     }
 }
