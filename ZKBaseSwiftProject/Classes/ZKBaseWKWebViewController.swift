@@ -50,7 +50,8 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         print("\(self)dealloc")
     }
     
-    public var schemeHandler: ZKURLSchemeHandler?
+    open var schemeHandler: Any?
+    
     public var _userContentController: WKUserContentController?
     
     public lazy var webView: WKWebView = {
@@ -78,8 +79,8 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         
 //      //核心库开启网络拦截
         if #available(iOS 11.0, *) {
-            if let schemeHandler = schemeHandler {
-                conf.addProxyConfig(handler: schemeHandler)
+            if let schemeHandler = self.schemeHandler {
+                conf.addProxyConfig(handler: schemeHandler as? WKURLSchemeHandler)
             }
         } else {
             // Fallback on earlier versions

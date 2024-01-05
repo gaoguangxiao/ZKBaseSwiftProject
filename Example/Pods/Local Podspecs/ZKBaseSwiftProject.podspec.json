@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
   "version": "0.2.6",
-  "summary": "修改UserDefault扩展-下沉扩展工具",
+  "summary": "提供自定义Web网络拦截",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {

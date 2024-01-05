@@ -10,7 +10,7 @@ import WebKit
 
 @available(iOS 11.0, *)
 public extension WKWebViewConfiguration {
-    func addProxyConfig(handler: ZKURLSchemeHandler) {
+    func addProxyConfig(handler: WKURLSchemeHandler?) {
         _ = hookWKWebView
         httpSchemes.forEach {
             setURLSchemeHandler(handler, forURLScheme: $0)

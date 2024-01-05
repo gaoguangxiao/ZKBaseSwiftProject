@@ -31,8 +31,9 @@ public class PTDebugView: UIView {
     
     public static func addLog(_ log : String) {
 #if DEBUG
-        let wStr = "\n-------\(Date.getCurrentDateStr(SECOND_FORMAT))日志-------\n" + log
+        let wStr = "\n-------\(Date.getCurrentDateStr("yyyy-MM-dd HH:mm:ss SSS"))日志-------\n" + log
         web_log = wStr + web_log
+        ZKWLog.Log(wStr)
 #endif
     }
         
