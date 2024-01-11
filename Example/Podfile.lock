@@ -8,7 +8,7 @@ PODS:
   - HandyJSON (5.0.2)
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.2.7):
+  - ZKBaseSwiftProject (0.2.8):
     - GGXSwiftExtension
     - HandyJSON
     - ReachabilitySwift
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: a336f386c9957db6f7f5088d29bf7e5159b367f4
+  ZKBaseSwiftProject: 22c5a654e2c4ddaa31282094f0013096ba848dcf
 
 PODFILE CHECKSUM: 6d2832dff92461bd227174a958aff8ad0f8d0bd9
 
