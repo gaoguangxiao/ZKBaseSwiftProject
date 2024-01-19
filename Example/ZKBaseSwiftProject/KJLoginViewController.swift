@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import ZKBaseSwiftProject
 
 class KJLoginViewController: AppBaseViewController {
@@ -21,9 +22,11 @@ class KJLoginViewController: AppBaseViewController {
     }
     
     @objc func gotoLogin()  {
-        ZKLog("跳转登录")
-        let vc = PPSMSLoginController()
-        push(vc)
+//        ZKLog("跳转登录")
+//        let vc = PPSMSLoginController()
+//        push(vc)
+//        HUD.flash()
+        HUD.flash("加载失败~")
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     
