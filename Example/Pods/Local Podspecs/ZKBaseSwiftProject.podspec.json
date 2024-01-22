@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.2.8",
-  "summary": "ZKAdapt适配率用public修饰",
+  "version": "0.2.9",
+  "summary": "增加WK加载失败弹框",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.2.8"
+    "tag": "0.2.9"
   },
   "platforms": {
     "ios": "10.0"
@@ -33,6 +33,12 @@
 
     ],
     "PKHUD": [
+
+    ],
+    "RxSwift": [
+
+    ],
+    "RxCocoa": [
 
     ]
   }
