@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.2.9",
-  "summary": "增加WK加载失败弹框",
+  "version": "0.3.0",
+  "summary": "增加RxSwift依赖",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.2.9"
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "10.0"
