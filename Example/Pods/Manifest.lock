@@ -15,7 +15,7 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.3.0):
+  - ZKBaseSwiftProject (0.3.1):
     - GGXSwiftExtension
     - HandyJSON
     - PKHUD
@@ -54,7 +54,7 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 68e11b80dc259e875e73c9cf845a28bd2fc5f0bb
+  ZKBaseSwiftProject: 5f2d01ba3f8c3d80f58c00ad7861c95a60f4fc51
 
 PODFILE CHECKSUM: 6d2832dff92461bd227174a958aff8ad0f8d0bd9
 
