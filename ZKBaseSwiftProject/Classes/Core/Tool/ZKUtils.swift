@@ -59,3 +59,7 @@ public func delay(time: TimeInterval, task: @escaping ()->(), queue: DispatchQue
     }
     return result
 }
+
+public func cancel(task: DispatchTask?) {
+    task?(true)
+}

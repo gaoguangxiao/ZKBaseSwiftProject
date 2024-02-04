@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.3.4'
-  s.summary          = '增加网络任务api公开'
+  s.version          = '0.3.6'
+  s.summary          = '增加GXTaskDownTimer任务倒计时'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
