@@ -10,3 +10,14 @@ import Foundation
 class ZKAPPConfig {
     
 }
+
+public enum DevelopmentMode {
+    //调试模式
+    public static var isTest: Bool {
+#if DEBUG
+        return true
+#else
+        return false
+#endif
+    }
+}

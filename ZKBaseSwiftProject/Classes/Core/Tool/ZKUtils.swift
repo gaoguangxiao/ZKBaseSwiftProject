@@ -8,8 +8,37 @@
 import Foundation
 import GGXSwiftExtension
 import WebKit
+import KeychainAccess
 
 public struct ZKUtils {
+    
+    public static var deviceIdentifier: String = {
+        return ZKUtils.getDeviceIdentifier()
+    }()
+ 
+    /// 获取设备的UUID
+    /// - Returns: UUID的字符串
+    static func getUUID() -> String {
+        return UUID().uuidString
+    }
+    
+    /// 获取设备的UUID ，此UUID与BundleID绑定，为设备的唯一ID
+    /// - Returns: 返回设备唯一标识符
+    static func getDeviceIdentifier() -> String{
+//        let bundleID : String = Bundle.main.infoDictionary?[(kCFBundleIdentifierKey as NSString) as String] as! String
+        let bundleID = kAppBundleId ?? "rs.com"
+        let service = bundleID + "\(#function)"
+        let keychainItems = Keychain(service :service).allItems()
+        var deviceID : String = ""
+        if keychainItems.count > 0 {
+            deviceID = keychainItems[0]["value"] as! String
+        }
+        if  deviceID.isEmpty {
+            deviceID = getUUID()
+            Keychain(service:service)["bundleID"] = deviceID
+        }
+        return deviceID
+    }
     
     public static func getbaseUA(name: String) -> String {
         let appVersion = kAppVersion ?? ""

@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.3.3",
-  "summary": "增加版本更新弹框",
+  "version": "0.3.6",
+  "summary": "增加GXTaskDownTimer任务倒计时",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.3.3"
+    "tag": "0.3.6"
   },
   "platforms": {
     "ios": "10.0"
   },
+  "swift_versions": "5.0",
   "source_files": "ZKBaseSwiftProject/Classes/**/*",
   "dependencies": {
     "SnapKit": [
@@ -40,6 +41,10 @@
     ],
     "RxCocoa": [
 
+    ],
+    "KeychainAccess": [
+
     ]
-  }
+  },
+  "swift_version": "5.0"
 }
