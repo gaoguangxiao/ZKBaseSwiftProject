@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.3.7'
-  s.summary          = '增加设备唯一标识'
+  s.version          = '0.3.9'
+  s.summary          = '增加磁盘管理'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
 #  s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SnapKit'
+  s.dependency 'SnapKit', '5.6.0'
   s.dependency 'GGXSwiftExtension'
   s.dependency 'HandyJSON'
   s.dependency 'ReachabilitySwift'

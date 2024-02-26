@@ -16,7 +16,7 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.3.6):
+  - ZKBaseSwiftProject (0.3.9):
     - GGXSwiftExtension
     - HandyJSON
     - KeychainAccess
@@ -24,7 +24,7 @@ PODS:
     - ReachabilitySwift
     - RxCocoa
     - RxSwift
-    - SnapKit
+    - SnapKit (= 5.6.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -58,8 +58,8 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: 29d2c619bdbe76dae88a954bbfcf4b8c87bc4a3e
+  ZKBaseSwiftProject: de891cb5aa565d135c16e9b635dd36b36bd398cb
 
-PODFILE CHECKSUM: 6d2832dff92461bd227174a958aff8ad0f8d0bd9
+PODFILE CHECKSUM: 0b971e711805b321a6b5a27a35c8ef4991aaa31c
 
 COCOAPODS: 1.15.0
