@@ -12,6 +12,38 @@ import KeychainAccess
 
 public struct ZKUtils {
     
+    /// 屏幕启动是scene的方向
+    public static var launchOrientationMask: UIInterfaceOrientation?
+    
+    /// 屏幕初始方向
+    public static var supportOrientationMask: UIInterfaceOrientationMask?
+    
+    /// 默认横屏
+    public static var orientationMask: UIInterfaceOrientationMask {
+        get {
+            if let supportOrientationMask {
+                return supportOrientationMask
+            }
+            if #available(iOS 16.0, *) {
+                
+            } else {
+                //iOS16之前 需要保存启动设备方向，解决当设备竖屏锁定时，启动图方向和主控制器不一致问题。而iOS16之后，系统内部解决了此问题
+                if let launchOrientationMask {
+                    if launchOrientationMask == .landscapeLeft {
+                        return .landscapeLeft
+                    } else if launchOrientationMask == .landscapeRight {
+                        return .landscapeRight
+                    }
+                }
+            }
+            // final
+            return .landscape
+        }
+        set {
+            supportOrientationMask = newValue
+        }
+    }
+    
     public static var deviceIdentifier: String = {
         return ZKUtils.getDeviceIdentifier()
     }()

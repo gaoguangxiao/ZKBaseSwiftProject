@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.3.9'
-  s.summary          = '增加磁盘管理'
+  s.version          = '0.4.0'
+  s.summary          = '修复隐私协议iOS16之前转屏问题'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

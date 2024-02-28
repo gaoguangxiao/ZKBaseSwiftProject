@@ -38,7 +38,6 @@ public class PTDebugView: UIView {
         ZKWLog.Log(wStr)
 #endif
     }
-        
     public func supportIn(superView: UIView ,apiURL: String = "", debugEvent :@escaping (PTDebugViewButtonEvent)->Void) {
         superView.addSubview(self)
         self.clickButtonEvent = debugEvent
@@ -84,7 +83,12 @@ public class PTDebugView: UIView {
         debugTextView.backgroundColor = UIColor.white
         debugTextView.isEditable = false
         debugTextView.snp.makeConstraints { (maker) in
-            maker.left.bottom.equalTo(10)
+            if #available(iOS 11.0, *) {
+                maker.left.equalTo(safeAreaLayoutGuide.snp.left)
+            } else {
+                maker.left.equalTo(10)
+            }
+            maker.bottom.equalTo(10)
             maker.top.equalTo(10)
             maker.right.equalTo(0)
         }
@@ -94,7 +98,7 @@ public class PTDebugView: UIView {
         self.addButton(title: "切换地址", right: 10+90+90, action: #selector(changeUrl))
         self.addButton(title: "清除log", right: 10+90+90+90, action: #selector(clearLog))
         self.addButton(title: "打开bridge", right: 10+90+90+90+90, action: #selector(openBridgeCall))
-//        self.addButton(title: "清WebStore", right: 10+90, top: 60,action: #selector(clearWebCache))
+        //        self.addButton(title: "清WebStore", right: 10+90, top: 60,action: #selector(clearWebCache))
         self.addButton(title: "启用离线包", right: 10+90+90, top: 60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "禁用离线包", right: 10+90+90+90, top:60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "清除离线包", right: 10+90+90+90+90, top: 60, action: #selector(didOfflineBtnCache(sender:)))
@@ -173,10 +177,10 @@ public class PTDebugView: UIView {
     
     @objc func didOfflineBtnCache(sender: UIButton) {
         self.clickButtonEvent?(.pkgAction(sender.tag))
-//        RSWebOfflineManager.sha
-//            URLProtocol.unregisterClass(PTURLProtocol.self)
-//            URLProtocol.wk_unregisterScheme("http")
-//            URLProtocol.wk_unregisterScheme("https")
-//            HUD.flash("禁用成功")
+        //        RSWebOfflineManager.sha
+        //            URLProtocol.unregisterClass(PTURLProtocol.self)
+        //            URLProtocol.wk_unregisterScheme("http")
+        //            URLProtocol.wk_unregisterScheme("https")
+        //            HUD.flash("禁用成功")
     }
 }

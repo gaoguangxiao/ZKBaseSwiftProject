@@ -23,12 +23,14 @@ open class ZKPrivacyPolicyVC: ZKBaseViewController {
         return true
     }
     
+    /// device support orientation
+    public var supportOrientationMask: UIInterfaceOrientationMask?
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "lanchimagebg01")!)
+
+        // 设置屏幕方向
+        ZKUtils.supportOrientationMask = supportOrientationMask
         
         let alertView = ZKPrivacyPolicyView.init(frame: CGRect.zero)
         alertView.tag = 100
