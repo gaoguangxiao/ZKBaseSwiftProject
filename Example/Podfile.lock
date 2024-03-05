@@ -1,10 +1,5 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - GGXSwiftExtension (0.3.3)
+  - GGXSwiftExtension (0.4.8)
   - HandyJSON (5.0.2)
   - KeychainAccess (4.2.2)
   - PKHUD (5.3.0)
@@ -15,8 +10,8 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - SnapKit (5.6.0)
-  - ZKBaseSwiftProject (0.3.9):
+  - SnapKit (5.7.1)
+  - ZKBaseSwiftProject (0.4.1):
     - GGXSwiftExtension
     - HandyJSON
     - KeychainAccess
@@ -24,15 +19,13 @@ PODS:
     - ReachabilitySwift
     - RxCocoa
     - RxSwift
-    - SnapKit (= 5.6.0)
+    - SnapKit
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 2.1.4)
   - ZKBaseSwiftProject (from `../`)
 
 SPEC REPOS:
   trunk:
-    - FBSnapshotTestCase
     - GGXSwiftExtension
     - HandyJSON
     - KeychainAccess
@@ -48,8 +41,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  GGXSwiftExtension: fb0eb52ed0c6e76ceb65a9d69d3810c16cacdbbe
+  GGXSwiftExtension: 0379bada1d373fcdeb8324ae4271f0dba58ffca3
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
@@ -57,9 +49,9 @@ SPEC CHECKSUMS:
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  ZKBaseSwiftProject: de891cb5aa565d135c16e9b635dd36b36bd398cb
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  ZKBaseSwiftProject: a51b9cd064fce645c19fb23965e2229b16578612
 
-PODFILE CHECKSUM: 0b971e711805b321a6b5a27a35c8ef4991aaa31c
+PODFILE CHECKSUM: ff8218c3110dffd25985522939fceb434b5b3348
 
 COCOAPODS: 1.15.0

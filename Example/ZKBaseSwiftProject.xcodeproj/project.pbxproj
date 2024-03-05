@@ -15,14 +15,14 @@
 		1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */; };
 		1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */; };
 		1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */; };
-		27039AA5AA889563A5577B69 /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D37132D8ACC2EE1FF969B21 /* Pods_ZKBaseSwiftProject_Example.framework */; };
+		1ECE3AB62B91BC3B00995302 /* SwiftUISMSQrCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE3AB52B91BC3B00995302 /* SwiftUISMSQrCodeView.swift */; };
+		3A0381B441141051764DE9FC /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622DCCB201856899385244E6 /* Pods_ZKBaseSwiftProject_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		696BEF32485FD96DF30FD230 /* Pods_ZKBaseSwiftProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2ED8076493B90FC6BAAAD8 /* Pods_ZKBaseSwiftProject_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSMSLoginController.swift; sourceTree = "<group>"; };
 		1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
 		1E7261BE2AFBA7E2008D5275 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		4D37132D8ACC2EE1FF969B21 /* Pods_ZKBaseSwiftProject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKBaseSwiftProject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ECE3AB52B91BC3B00995302 /* SwiftUISMSQrCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUISMSQrCodeView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ZKBaseSwiftProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBaseSwiftProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,12 +58,10 @@
 		607FACE51AFB9204008FA782 /* ZKBaseSwiftProject_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZKBaseSwiftProject_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7755D2F50AF162D8BE4FF651 /* Pods-ZKBaseSwiftProject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKBaseSwiftProject_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZKBaseSwiftProject_Tests/Pods-ZKBaseSwiftProject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		622DCCB201856899385244E6 /* Pods_ZKBaseSwiftProject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKBaseSwiftProject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C43D8A3303C31EEE56C5E42 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A0C3DE5BBF3B3FEF1B3F261D /* Pods-ZKBaseSwiftProject_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKBaseSwiftProject_Example.release.xcconfig"; path = "Target Support Files/Pods-ZKBaseSwiftProject_Example/Pods-ZKBaseSwiftProject_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A8AE0B718E9DF61162F8D1C4 /* Pods-ZKBaseSwiftProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKBaseSwiftProject_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZKBaseSwiftProject_Tests/Pods-ZKBaseSwiftProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDF8C4BA2C7AACDD88AA0810 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DD2ED8076493B90FC6BAAAD8 /* Pods_ZKBaseSwiftProject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKBaseSwiftProject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27039AA5AA889563A5577B69 /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */,
+				3A0381B441141051764DE9FC /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696BEF32485FD96DF30FD230 /* Pods_ZKBaseSwiftProject_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +112,7 @@
 				1E6148862AB869D3003E651B /* KJUserViewController.swift */,
 				1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */,
 				1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */,
+				1ECE3AB52B91BC3B00995302 /* SwiftUISMSQrCodeView.swift */,
 				1E63B2772B14462000EE11BA /* JKWebVc.swift */,
 				1E63B2792B1487E100EE11BA /* JKWebVc.xib */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -168,8 +166,7 @@
 		76DFF7479BC781FDBE27974E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D37132D8ACC2EE1FF969B21 /* Pods_ZKBaseSwiftProject_Example.framework */,
-				DD2ED8076493B90FC6BAAAD8 /* Pods_ZKBaseSwiftProject_Tests.framework */,
+				622DCCB201856899385244E6 /* Pods_ZKBaseSwiftProject_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,8 +176,6 @@
 			children = (
 				143BDF7E36709A0F5D93BE00 /* Pods-ZKBaseSwiftProject_Example.debug.xcconfig */,
 				A0C3DE5BBF3B3FEF1B3F261D /* Pods-ZKBaseSwiftProject_Example.release.xcconfig */,
-				7755D2F50AF162D8BE4FF651 /* Pods-ZKBaseSwiftProject_Tests.debug.xcconfig */,
-				A8AE0B718E9DF61162F8D1C4 /* Pods-ZKBaseSwiftProject_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -196,7 +191,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				B1F3BB69F06F4E3EA2AE54EE /* [CP] Embed Pods Frameworks */,
+				034F53FD63E740B0167462A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,11 +206,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ZKBaseSwiftProject_Tests" */;
 			buildPhases = (
-				E73BCD815541B25DBEC83148 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				1D8A70EADAC4A0F561512937 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,25 +285,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D8A70EADAC4A0F561512937 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZKBaseSwiftProject_Tests/Pods-ZKBaseSwiftProject_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZKBaseSwiftProject_Tests/Pods-ZKBaseSwiftProject_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1F3BB69F06F4E3EA2AE54EE /* [CP] Embed Pods Frameworks */ = {
+		034F53FD63E740B0167462A9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,28 +343,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E73BCD815541B25DBEC83148 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZKBaseSwiftProject_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -403,6 +356,7 @@
 				1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */,
 				1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */,
 				1E6148892AB869D3003E651B /* KJUserViewController.swift in Sources */,
+				1ECE3AB62B91BC3B00995302 /* SwiftUISMSQrCodeView.swift in Sources */,
 				1E6148872AB869D3003E651B /* KJTabBarViewController.swift in Sources */,
 				1E6148882AB869D3003E651B /* KJHomeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
@@ -588,7 +542,6 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7755D2F50AF162D8BE4FF651 /* Pods-ZKBaseSwiftProject_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MC9Q66TLXQ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -611,7 +564,6 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8AE0B718E9DF61162F8D1C4 /* Pods-ZKBaseSwiftProject_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MC9Q66TLXQ;
 				FRAMEWORK_SEARCH_PATHS = (

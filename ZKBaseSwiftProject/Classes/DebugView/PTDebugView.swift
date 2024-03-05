@@ -105,7 +105,7 @@ public class PTDebugView: UIView {
     }
     
     
-    private func addButton(title:String, right:CGFloat,top: CGFloat = 10,action: Selector) {
+    public func addButton(title:String, right:CGFloat,top: CGFloat = 10,action: Selector) {
         let button = UIButton.init()
         button.setTitle(title, for: UIControl.State.normal)
         button.addTarget(self, action: action, for: UIControl.Event.touchUpInside)

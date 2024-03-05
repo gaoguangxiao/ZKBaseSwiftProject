@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@objc public protocol ZKNavigationViewProtocol where Self: UIViewController {
+@objc public protocol ZKNavigationViewProtocol where Self: UIViewController{
     
     func hiddenNavigationBar() -> Bool
     

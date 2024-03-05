@@ -8,6 +8,7 @@
 import UIKit
 import ZKBaseSwiftProject
 
+@available(iOS 13.0, *)
 class KJTabBarViewController : ZKTabBarViewController {
     
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class KJTabBarViewController : ZKTabBarViewController {
 
 //        let itemNameSelectArray:[String] = ["tabbar_msg_1","tabbar_mine_1"]
 //        let itemNameArray:[String] = ["tabbar_msg","tabbar_mine"]
-        let itemTitle : [String] = ["登录","首页","我的"]
+        let itemTitle : [String] = ["功能","首页","我的"]
         let titleSelectColor : UIColor = .hex(0x1B84F5)
         let titleColor : UIColor = .hex(0x818181)
         //背景颜色是统一的

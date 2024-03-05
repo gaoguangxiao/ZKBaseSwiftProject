@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.4.0'
-  s.summary          = '修复隐私协议iOS16之前转屏问题'
+  s.version          = '0.4.1'
+  s.summary          = '增加SwiftUI和UIKit交互基类，支持iOS>12.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/gaoguangxiao/ZKBaseSwiftProject.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
   s.source_files = 'ZKBaseSwiftProject/Classes/**/*'
   
@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
 #  s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SnapKit', '5.6.0'
+  s.dependency 'SnapKit'
   s.dependency 'GGXSwiftExtension'
   s.dependency 'HandyJSON'
   s.dependency 'ReachabilitySwift'

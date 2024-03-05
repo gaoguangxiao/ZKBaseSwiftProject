@@ -46,10 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initInfo(){
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white//设置window颜色
-        let tabbar = KJTabBarViewController()//初始化
-        let navtab = UINavigationController(rootViewController: tabbar)
-        self.window?.rootViewController = navtab
-        self.window?.makeKeyAndVisible()
+        if #available(iOS 13.0, *) {
+            let tabbar = KJTabBarViewController()
+            let navtab = UINavigationController(rootViewController: tabbar)
+            self.window?.rootViewController = navtab
+            self.window?.makeKeyAndVisible()
+        } else {
+            // Fallback on earlier versions
+        }//初始化
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

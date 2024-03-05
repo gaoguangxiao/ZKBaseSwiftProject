@@ -23,3 +23,6 @@ public typealias ZKStringClosure = (String) -> Void
 public typealias ZKArrayClosure = (Array<Any>) -> Void
 /// Data闭包类型
 public typealias ZKDataClosure = (Data?) -> Void
+
+/// Int_String闭包类型
+public typealias ZKIntStringClosure = (Int, String) -> Void

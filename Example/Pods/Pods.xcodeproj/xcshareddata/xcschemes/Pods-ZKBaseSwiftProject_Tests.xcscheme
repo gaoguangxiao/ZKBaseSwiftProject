@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3CEFCB4465F82614D6662E2D275D00E7"
-               BuildableName = "Pods_ZKBaseSwiftProject_Tests.framework"
+               BuildableName = "libPods-ZKBaseSwiftProject_Tests.a"
                BlueprintName = "Pods-ZKBaseSwiftProject_Tests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -50,7 +50,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CEFCB4465F82614D6662E2D275D00E7"
-            BuildableName = "Pods_ZKBaseSwiftProject_Tests.framework"
+            BuildableName = "libPods-ZKBaseSwiftProject_Tests.a"
             BlueprintName = "Pods-ZKBaseSwiftProject_Tests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
