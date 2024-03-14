@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-//import RxCocoa
+import SnapKit
 import GGXSwiftExtension
 import PKHUD
 
@@ -19,7 +19,7 @@ public protocol WKWebScriptMessageDelegate: NSObjectProtocol {
     
     @available(iOS 14.0, *)
     func zkUserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void);
-        
+    
 }
 
 open class ZKBaseWKWebViewController: ZKBaseViewController {
@@ -28,8 +28,8 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     public weak var scriptMessageDelegate: WKWebScriptMessageDelegate?
     
     open override func viewDidLoad() {
-        super.viewDidLoad()
         self.view.addSubview(webView)
+        super.viewDidLoad()
         self.buildUI()
     }
     
@@ -45,29 +45,6 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     //自定义UA
     public func setUA(customUserAgent: String) {
         self.webView.customUserAgent = customUserAgent
-    }
-    
-    /// 重置reload、为了解决WKWebView拦截问题
-    public func resetWKWebView()  {
-        let conf = WKWebViewConfiguration()
-        let webView = WKWebView(frame: .zero, configuration: conf)
-        webView.navigationDelegate = self
-        if #available(iOS 16.4, *) {
-            webView.isInspectable = true
-        } else {
-            // Fallback on earlier versions
-        }
-        //        webView.scrollView.delegate = self
-        webView.scrollView.bounces = false
-        webView.allowsLinkPreview = false
-        webView.isOpaque = false
-        webView.backgroundColor = UIColor.clear
-        if #available(iOS 11.0, *) {
-            webView.scrollView.contentInsetAdjustmentBehavior = .never
-        } else {
-            edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
-        }
-        self.webView = webView
     }
     
     deinit {
@@ -101,7 +78,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         conf.allowsInlineMediaPlayback = true
         conf.allowsAirPlayForMediaPlayback = false
         
-//      //核心库开启网络拦截
+        //      //核心库开启网络拦截
         if #available(iOS 11.0, *) {
             if let schemeHandler = self.schemeHandler {
                 conf.addProxyConfig(handler: schemeHandler as? WKURLSchemeHandler)
@@ -184,10 +161,10 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         ZKLog("加载失败 error = \(error)")
     }
     
-//    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-//    
-//        print("webViewWebContentProcessDidTerminate:\(webView)")
-//    }
+    //    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+    //
+    //        print("webViewWebContentProcessDidTerminate:\(webView)")
+    //    }
     
     
     public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -220,8 +197,47 @@ public extension ZKBaseWKWebViewController {
         }
     }
     
+    /// 增加iOS15.0之后方法
+    @available(iOS 15.0, *)
+    func evaluateJavaScript(_ javaScript: String, in frame: WKFrameInfo? = nil, contentWorld: WKContentWorld) async throws -> Any? {
+        return try await self.webView.evaluateJavaScript(javaScript, in: frame, contentWorld: contentWorld)
+    }
+    
     func evaluateJavaScript(_ javaScriptString: String) {
-        self.webView.evaluateJavaScript(javaScriptString)
+        if #available(iOS 13.0, *) {
+            Task {
+                await MainActor.run {
+                    if #available(iOS 14.0, *) {
+                        self.webView.evaluateJavaScript(javaScriptString, in: .none, in: .page) { result in
+                            self.evaluateJavaScriptCompletionHandler(result: result)
+                        }
+                    } else {
+                        self.webView.evaluateJavaScript(javaScriptString)
+                    }
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+            DispatchQueue.main.async {
+                self.webView.evaluateJavaScript(javaScriptString)
+            }
+        }
+    }
+    
+    @available(iOS 13.0.0, *)
+    func evaluateJavaScript(_ javaScriptString: String) async throws -> Any {
+        return try await self.webView.evaluateJavaScript(javaScriptString)
+    }
+    
+    func evaluateJavaScriptCompletionHandler(result: Result<Any, any Error>) {
+        //        switch result {
+        //        case .success(let data):
+        //            print("success: \(data)")
+        //            break
+        //        case .failure(let error):
+        //            print("failure: \(error)")
+        //            break
+        //        }
     }
 }
 
@@ -243,6 +259,6 @@ extension ZKBaseWKWebViewController: WKScriptMessageHandler , WKScriptMessageHan
 
 //extension ZKBaseWKWebViewController: WKWebScriptMessageDelegate {
 //    open func zkUserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
-//        
+//
 //    }
 //}

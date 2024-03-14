@@ -115,6 +115,10 @@ open class ZKNavigationView: ZKBaseView {
     
     private lazy var contentView:UIView = UIView()
     
+//    var senderBackBtn: UIButton {
+//        return self.backBtn
+//    }
+    
     public lazy var backBtn = UIButton().zkNormalHigTDImg("navBack").zkAction(self, action: #selector(backBtnClick))
     
     required public init?(coder: NSCoder) {

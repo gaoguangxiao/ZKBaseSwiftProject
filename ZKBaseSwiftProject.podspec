@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.4.1'
-  s.summary          = '增加SwiftUI和UIKit交互基类，支持iOS>12.0'
+  s.version          = '0.4.2'
+  s.summary          = '客户端调用JS方法，增加MainActor线程切换'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -46,5 +46,5 @@ TODO: Add long description of the pod here.
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
   s.dependency 'KeychainAccess'
-  
+#  pod 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
 end

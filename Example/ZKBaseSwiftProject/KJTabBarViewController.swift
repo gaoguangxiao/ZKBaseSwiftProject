@@ -16,7 +16,7 @@ class KJTabBarViewController : ZKTabBarViewController {
         let login = KJLoginViewController()
         let vc = KJHomeViewController();
         let user = KJUserViewController()
-        self.viewControllers = [login,vc,user]
+        self.viewControllers = [vc,login,user]
         
         ConfigTabBarImage()
     }

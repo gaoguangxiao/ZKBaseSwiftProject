@@ -23,31 +23,12 @@ class JKWebVc: ZKBaseWKWebViewController {
         
         self.setUA(customUserAgent: "test")
         
-        //注入JS代码
-//        let jsCode = """
-//                var nativeBridge = new Object();
-//                nativeBridge.postMessage = function(params) {
-//                return window.webkit.messageHandlers.postMessage.postMessage({params});
-//                }
-//                """
-//        self.addUserScript(forSource: jsCode,forMainFrameOnly: false)
-
         //增加JS监听
         self.scriptMessageDelegate = self
         self.addScriptMessage(name: "JSBridge")
         
         //WKWeb
-        self.urlString = "http://localhost:8081/zkweb/test.html"
-        
-
-        self.setUA(customUserAgent: ZKUtils.deviceUserAgent)
-        //原生和web交互中，由监听JS方法，响应之后通过`evaluateJavaScript`向web发送消息；
-        //iOS14之后，监听JS方法，可以在监听方法中`replyHandler`直接给回调，
-//        不需要调用`evaluateJavaScript`，也就不需要自定义实现JS方法的回调
-        
-        //        let wkConappName = self.webView.configuration.applicationNameForUserAgent
-        //        print(wkConappName)
-        
+        self.urlString = "http://127.0.0.1:5500/loadPkg.html"
     }
     
     @IBAction func 给Web回调(_ sender: Any) {
