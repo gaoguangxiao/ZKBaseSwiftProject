@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.4.2'
-  s.summary          = '客户端调用JS方法，增加MainActor线程切换'
+  s.version          = '0.4.3'
+  s.summary          = '修复HandyJSON私有库'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

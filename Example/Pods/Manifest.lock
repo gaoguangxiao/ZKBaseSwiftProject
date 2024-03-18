@@ -1,6 +1,6 @@
 PODS:
   - GGXSwiftExtension (0.4.8)
-  - HandyJSON (5.0.2)
+  - HandyJSON (5.0.6)
   - KeychainAccess (4.2.2)
   - PKHUD (5.3.0)
   - ReachabilitySwift (5.2.1)
@@ -25,9 +25,10 @@ DEPENDENCIES:
   - ZKBaseSwiftProject (from `../`)
 
 SPEC REPOS:
+  https://gitee.com/china_ios/cocoapods-specs.git:
+    - HandyJSON
   https://github.com/CocoaPods/Specs.git:
     - GGXSwiftExtension
-    - HandyJSON
     - KeychainAccess
     - PKHUD
     - ReachabilitySwift
@@ -42,7 +43,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GGXSwiftExtension: 0379bada1d373fcdeb8324ae4271f0dba58ffca3
-  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  HandyJSON: dc200ff32c30bd642853994bf478897fd09a52ff
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   ReachabilitySwift: 5ae15e16814b5f9ef568963fb2c87aeb49158c66
