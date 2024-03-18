@@ -41,6 +41,8 @@ TODO: Add long description of the pod here.
   s.dependency 'SnapKit'
   s.dependency 'GGXSwiftExtension'
   s.dependency 'HandyJSON'
+#  s.dependency 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
+#  , :tag => '5.0.2'
   s.dependency 'ReachabilitySwift'
   s.dependency 'PKHUD'
   s.dependency 'RxSwift'
