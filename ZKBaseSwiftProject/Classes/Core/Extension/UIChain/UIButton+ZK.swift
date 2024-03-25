@@ -10,13 +10,6 @@ import UIKit
 public extension UIButton {
     
     //MARK: - 文字颜色
-    @discardableResult
-    func zkNormalHigTDImg(_ imgName: String?) -> Self {
-        let image = UIImage(named: imgName ?? "")
-        setImage(image, for: .normal)
-        setImage(image, for: .highlighted)
-        return self
-    }
     
     //普通+点击效果
     @discardableResult
@@ -83,11 +76,20 @@ public extension UIButton {
     }
     
     @discardableResult
+    func zkNormalHigTDImg(_ imgName: String?) -> Self {
+        let image = UIImage(named: imgName ?? "")
+        setImage(image, for: .normal)
+        setImage(image, for: .highlighted)
+        return self
+    }
+    
+    @discardableResult
     func zkNormalImgName(_ imgName: String?) -> Self {
         setImage(UIImage(named: imgName ?? ""), for: .normal)
         return self
     }
     
+    //MARK: - 背景
     @discardableResult
     func zkNormalBackgroundImage(_ imgName: String?) -> Self {
         setBackgroundImage(UIImage(named: imgName ?? ""), for: .normal)
@@ -109,6 +111,14 @@ public extension UIButton {
     @discardableResult
     func zkSelectBackgroundImage(_ imgName: String?) -> Self {
         setBackgroundImage(UIImage(named: imgName ?? ""), for: .selected)
+        return self
+    }
+    
+    //
+    @discardableResult
+    func zkBackgroundHightTDImage(_ image: UIImage) -> Self {
+        setBackgroundImage(image, for: .normal)
+        setBackgroundImage(image, for: .highlighted)
         return self
     }
     

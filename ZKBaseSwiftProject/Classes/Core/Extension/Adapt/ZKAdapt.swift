@@ -34,7 +34,7 @@ public extension Int {
 public struct ZKAdapt {
     
     public static let factor: CGFloat = {
-        return UIDevice.isIPad ? factorIpad : rate * 0.83333
+        return UIDevice.isIPad ? factorIpad : rate * 0.87533
     }()
 
     public static let factorIpad: CGFloat = {
@@ -46,7 +46,7 @@ public struct ZKAdapt {
 
     public static let rate: CGFloat = {
         let deviceHeight = SCREEN_WIDTH_STATIC
-        let designedHeight = CGFloat(UIDevice.isIPad ? 768.0 : 390)
+        let designedHeight = CGFloat(UIDevice.isIPad ? 768.0 : 414)
         return deviceHeight/designedHeight
     }()
     
