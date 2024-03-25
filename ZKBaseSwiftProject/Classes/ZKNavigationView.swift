@@ -72,14 +72,20 @@ open class ZKNavigationView: ZKBaseView {
         position += 1
     }
     
+    public func addBackItem(imageName:String, _ closure: @escaping ZKVoidClosure){
+        self.addBackItem(closure)
+        backBtn.zkNormalHigTDImg(imageName)
+//        backBtn.zkNormalBackgroundImage(imageName)
+    }
+    
     /// 添加返回按钮
     /// - Parameter closure:
     public func addBackItem(_ closure: @escaping ZKVoidClosure){
         contentView.addSubview(backBtn)
         backBtn.snp.makeConstraints { make in
-            make.left.equalTo(16)
+            make.left.equalTo(UIDevice.getSafeAreaLeft == 0 ? 20 : UIDevice.getSafeAreaLeft)
             make.centerY.equalTo(titleLb)
-            make.size.equalTo(26)
+            make.size.equalTo(CGSize(width: 40, height:40.0))
         }
         backBtn.addTarget(self, action: #selector(backBtnClick), for: .touchUpInside)
         backEvent = closure
@@ -98,7 +104,7 @@ open class ZKNavigationView: ZKBaseView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: TopBarHeight)
+//        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: f)
         addSubview(contentView)
         contentView.snp.makeConstraints { make in
             make.left.right.equalTo(0)

@@ -54,8 +54,9 @@ open class ZKPrivacyPolicyVC: ZKBaseViewController {
         let childInfoRange: NSRange = self.getStringRange(info: info, str: "《儿童个人信息保护规则及监护人须知》")
         attrStr.addAttribute(NSAttributedString.Key.link, value: "childInfo://", range: childInfoRange)
         
-        alertView.showVersionUpdateView(vc: self, title: "温馨提示", info: attrStr, forceUpdate: false) { isAgree in
+        alertView.showVersionUpdateView(vc: self, title: "温馨提示", info: attrStr) { isAgree in
             if isAgree {
+                UserDefaults.agreePrivacyPolicy = true
                 self.isAgree(true)
             }
         } openUrlEvent: { str in

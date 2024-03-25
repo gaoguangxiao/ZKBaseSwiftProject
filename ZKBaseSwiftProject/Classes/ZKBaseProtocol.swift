@@ -7,12 +7,17 @@
 
 import Foundation
 import UIKit
+import GGXSwiftExtension
 
 @objc public protocol ZKNavigationViewProtocol where Self: UIViewController{
     
     func hiddenNavigationBar() -> Bool
     
     func navigationTitle() -> String?
+    
+    func navigationHeight() -> CGFloat
+    
+    func backItemImageName() -> String?
     
     func backItemAction()
     
@@ -40,13 +45,21 @@ public extension ZKNavigationViewProtocol {
     
      var navView: ZKNavigationView {
         get {
-            let nav = ZKNavigationView()
+            let nav = ZKNavigationView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: navigationHeight()))
             nav.tag = 9999
             nav.backgroundColor = .white
             nav.isHidden = hiddenNavigationBar()
             nav.title = navigationTitle()
-            nav.addBackItem { [weak self] in
-                self?.backItemAction()
+            if let backImageName = backItemImageName() {
+                nav.addBackItem(imageName: backImageName) { [weak self] in
+                    guard let self else { return }
+                    backItemAction()
+                }
+            } else {
+                nav.addBackItem { [weak self] in
+                    guard let self else { return }
+                    backItemAction()
+                }
             }
             nav.addRightItem(name: rightItemTitle?()) { [weak self] in
                 self?.rightItemClicked?()
@@ -55,9 +68,9 @@ public extension ZKNavigationViewProtocol {
         }
     }
     
-//    func updateSenderBackImage(imageName: String) {
-//        navView.backBtn.zkNormalHigTDImg(imageName)
-//    }
+    func updateSenderBackImage(imageName: String) {
+        navView.backBtn.zkNormalHigTDImg(imageName)
+    }
 }
 
 

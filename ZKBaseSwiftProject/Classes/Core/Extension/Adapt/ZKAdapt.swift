@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import GGXSwiftExtension
+
 public extension CGFloat {
     /// 返回对应设备匹配的尺寸
     func tdMatch() -> CGFloat{
@@ -30,19 +32,26 @@ public extension Int {
 }
 
 public struct ZKAdapt {
-    static let factor: CGFloat = {
-        return UIDevice.isIPad ? factorIpad : 0.551
+    
+    public static let factor: CGFloat = {
+        return UIDevice.isIPad ? factorIpad : rate * 0.83333
     }()
 
-    static let factorIpad: CGFloat = {
-        let deviceHeight = UIScreen.main.bounds.width < UIScreen.main.bounds.height ? UIScreen.main.bounds.height : UIScreen.main.bounds.width
-        let designedHeight = CGFloat(1024)
-        return deviceHeight/designedHeight
+    public static let factorIpad: CGFloat = {
+        let deviceHeight = UIScreen.main.bounds.height
+        let designedHeight = CGFloat(768)
+        let adpt = deviceHeight/designedHeight
+        return adpt
     }()
 
     public static let rate: CGFloat = {
-        let deviceHeight = UIScreen.main.bounds.height
-        let designedHeight = CGFloat(UIDevice.isIPad ? 768.0 : 414.0)
+        let deviceHeight = SCREEN_WIDTH_STATIC
+        let designedHeight = CGFloat(UIDevice.isIPad ? 768.0 : 390)
         return deviceHeight/designedHeight
     }()
+    
+    public static func factor(_ ipadValue: CGFloat, _ iphoneValue: CGFloat) -> CGFloat {
+        let adpt = (UIDevice.isIPad ? ipadValue : iphoneValue)
+        return rate * adpt
+    }
 }

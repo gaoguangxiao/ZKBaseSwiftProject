@@ -8,11 +8,11 @@
 import UIKit
 import GGXSwiftExtension
 
-class ZKPrivacyPolicyView: UIView {
+public class ZKPrivacyPolicyView: UIView {
 
     private let backgroundView = UIView.init()
     
-    private let borderView = UIView.init()
+    public let borderView = UIView.init()
     
     private let titleLabel = UILabel.init()
     
@@ -23,6 +23,14 @@ class ZKPrivacyPolicyView: UIView {
     private let disagreeButton = UIButton.init()
 
     private var agreeBoolEvent :ZKBoolClosure?
+    
+    private var disAgreeBoolEvent :ZKBoolClosure?
+
+    /// 是否需要再次弹框，默认true，会关闭app.true会有回调false
+    public var isNeedAgainAlert = true
+
+    /// 是否允许蒙版点击
+    public var isAllowMaskClick = false
     
     /// 打开URL事件
     private var openUrlEvent: ZKStringClosure?
@@ -35,7 +43,7 @@ class ZKPrivacyPolicyView: UIView {
     
     private var forceUpdate = false
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setUI()
     }
@@ -44,11 +52,18 @@ class ZKPrivacyPolicyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("deinit: \(self)")
+    }
+    
     private func setUI() {
         self.backgroundColor = UIColor.clear
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.6
 
+        let backTap = UITapGestureRecognizer(target: self, action: #selector(disTapBeClick))
+        self.backgroundView.addGestureRecognizer(backTap)
+        
         self.borderView.backgroundColor = UIColor.white
         self.borderView.layer.masksToBounds = true
         self.borderView.layer.cornerRadius = 29*rate
@@ -88,10 +103,6 @@ class ZKPrivacyPolicyView: UIView {
         self.borderView.addSubview(self.tipTextView)
         self.borderView.addSubview(self.agreeButton)
         self.borderView.addSubview(self.disagreeButton)
-    }
-    
-    
-    override func layoutSubviews() {
         
         self.backgroundView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
@@ -102,7 +113,11 @@ class ZKPrivacyPolicyView: UIView {
             make.height.equalTo(UIDevice.isIPad ? 386.0 * rate : 280.0 * rate)
             make.center.equalToSuperview()
         }
-        
+    }
+    
+    
+    public override func layoutSubviews() {
+                
         self.titleLabel.snp.makeConstraints { (maker) in
             maker.centerX.equalToSuperview()
             maker.width.equalToSuperview()
@@ -135,21 +150,30 @@ class ZKPrivacyPolicyView: UIView {
         }
     }
     
-    func showVersionUpdateView(vc: UIViewController, 
+    public func disagreeButtonTitle(title: String) {
+        self.disagreeButton.setTitle(title, for: .normal)
+//        print("设置取消")
+    }
+    
+    public func showVersionUpdateView(vc: UIViewController? = nil,
                                title: String,
                                info: NSAttributedString,
-                               forceUpdate: Bool,
                                agreeEvent: @escaping ZKBoolClosure,
                                openUrlEvent: @escaping ZKStringClosure
     )  {
         
         self.tipTextView.attributedText = info
-        self.forceUpdate = forceUpdate
         self.agreeBoolEvent = agreeEvent
         self.openUrlEvent   = openUrlEvent
         self.titleLabel.text = title
 
-        vc.view.addSubview(self)
+        if let vc {
+            vc.view.addSubview(self)
+        } else {
+            if let windowRootVc = UIApplication.rootWindow?.rootViewController {
+                windowRootVc.view.addSubview(self)
+            }
+        }
         self.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
@@ -157,21 +181,27 @@ class ZKPrivacyPolicyView: UIView {
         self.layoutIfNeeded()
     }
     
-    func getStringRange(info: String, str: String) -> NSRange {
-        let range: Range = info.range(of: str)!
-        let location = info.distance(from: info.startIndex, to: range.lowerBound)
-        return NSRange(location: location, length: str.count)
+
+    @objc func disTapBeClick() {
+        guard isAllowMaskClick else { return  }
+        self.removeFromSuperview()
+        agreeBoolEvent?(false)
     }
-    
     
     //MARK button event
     @objc func agreeButtonBeClick() {
-        UserDefaults.agreePrivacyPolicy = true
         self.removeFromSuperview()
         agreeBoolEvent?(true)
     }
     
     @objc func disagreeButtonBeClick(sender: UIButton) {
+        
+        guard isNeedAgainAlert else {
+            self.removeFromSuperview()
+            agreeBoolEvent?(false)
+            return
+        }
+        
         if sender.tag == 2 {
              exit(0)
         }
@@ -209,7 +239,7 @@ class ZKPrivacyPolicyView: UIView {
 }
 
 extension ZKPrivacyPolicyView: UITextViewDelegate {
-     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+    public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         
          guard let urlScheme = URL.scheme else {
              return true

@@ -15,4 +15,8 @@ public extension UIImageView {
         return self
     }
     
+    func zkImage(_ image: UIImage) -> Self {
+        self.image = image
+        return self
+    }
 }

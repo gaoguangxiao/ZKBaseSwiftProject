@@ -95,6 +95,12 @@ public extension UIButton {
     }
     
     @discardableResult
+    func zkNormalBackgroundImage(_ image: UIImage) -> Self {
+        setBackgroundImage(image, for: .normal)
+        return self
+    }
+    
+    @discardableResult
     func zkSelectImgName(_ imgName: String?) -> Self {
         setImage(UIImage(named: imgName ?? ""), for: .selected)
         return self

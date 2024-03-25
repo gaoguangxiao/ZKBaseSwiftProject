@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import GGXSwiftExtension
 
 open class ZKBaseViewController: UIViewController  {
     
@@ -20,6 +21,14 @@ open class ZKBaseViewController: UIViewController  {
 
 
 extension ZKBaseViewController: ZKNavigationViewProtocol {
+    
+    open func navigationHeight() -> CGFloat {
+        return TopBarHeight
+    }
+    
+    open func backItemImageName() -> String? {
+        return nil
+    }
     
     open func navigationTitle() -> String? {
         return nil
