@@ -116,9 +116,9 @@ public extension UIButton {
     
     //
     @discardableResult
-    func zkBackgroundHightTDImage(_ image: UIImage) -> Self {
+    func zkBackgroundNomalImage(_ image: UIImage) -> Self {
         setBackgroundImage(image, for: .normal)
-        setBackgroundImage(image, for: .highlighted)
+//        setBackgroundImage(image, for: .highlighted)
         return self
     }
     

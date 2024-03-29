@@ -16,6 +16,14 @@ public class ZKAnimationScaleBtn: UIButton {
         addTarget(self, action: #selector(zkTouchDragInside), for: .touchDragInside)
         addTarget(self, action: #selector(zkTouchDown), for: .touchDown)
         addTarget(self, action: #selector(zkTouchDragExit), for: .touchDragExit)
+        
+//        if #available(iOS 15.0, *) {
+
+//        } else {
+            // Fallback on earlier versions
+            //默认为YES。如果是，当高亮显示(按下)时，图像绘制得更暗
+            self.adjustsImageWhenHighlighted = false
+//        }
     }
     
     required init?(coder: NSCoder) {
