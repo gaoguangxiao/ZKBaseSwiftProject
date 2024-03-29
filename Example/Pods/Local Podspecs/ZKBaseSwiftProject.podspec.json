@@ -1,9 +1,9 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "0.4.2",
-  "summary": "客户端调用JS方法，增加MainActor线程切换",
+  "version": "0.4.3",
+  "summary": "修复HandyJSON私有库",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/gaoguangxiao",
+  "homepage": "https://gitee.com/gtools",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "小修": "gaoguangxiao125@sina.com"
   },
   "source": {
-    "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "0.4.2"
+    "git": "https://gitee.com/gtools/zkbase-swift-project.git",
+    "tag": "0.4.3"
   },
   "platforms": {
     "ios": "12.0"
