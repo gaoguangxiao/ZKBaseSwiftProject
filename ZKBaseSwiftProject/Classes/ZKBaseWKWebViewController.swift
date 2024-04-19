@@ -10,8 +10,9 @@ import WebKit
 import SnapKit
 import GGXSwiftExtension
 import PKHUD
+import RxCocoa
 
-let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
+public let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 
 public protocol WKWebScriptMessageDelegate: NSObjectProtocol {
     
@@ -41,6 +42,11 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
             maker.top.equalTo(TopBarHeight)
             maker.bottom.equalTo(0)
         }
+        
+        /// 注册进度
+        webView.rx.observe(Double.self, "estimatedProgress").subscribe(onNext: { value in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kWebviewEstimatedProgressValue), object: value)
+        }).disposed(by: self.disposeBag)
     }
     
     //自定义UA
@@ -205,24 +211,24 @@ public extension ZKBaseWKWebViewController {
     }
     
     func evaluateJavaScript(_ javaScriptString: String) {
-        if #available(iOS 13.0, *) {
-            Task {
-                await MainActor.run {
-                    if #available(iOS 14.0, *) {
-                        self.webView.evaluateJavaScript(javaScriptString, in: .none, in: .page) { result in
-                            self.evaluateJavaScriptCompletionHandler(result: result)
-                        }
-                    } else {
+//        if #available(iOS 13.0, *) {
+//            Task {
+//                await MainActor.run {
+//                    if #available(iOS 14.0, *) {
+//                        self.webView.evaluateJavaScript(javaScriptString, in: .none, in: .page) { result in
+//                            self.evaluateJavaScriptCompletionHandler(result: result)
+//                        }
+//                    } else {
                         self.webView.evaluateJavaScript(javaScriptString)
-                    }
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-            DispatchQueue.main.async {
-                self.webView.evaluateJavaScript(javaScriptString)
-            }
-        }
+//                    }
+//                }
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//            DispatchQueue.main.async {
+//                self.webView.evaluateJavaScript(javaScriptString)
+//            }
+//        }
     }
     
     @available(iOS 13.0.0, *)

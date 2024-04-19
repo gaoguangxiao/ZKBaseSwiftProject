@@ -11,7 +11,7 @@ import GGXSwiftExtension
 
 public enum PTDebugViewButtonEvent {
     case ChangeUrl(PTDebugView)
-    case ReloadWeb(String)
+    case ReloadWeb
     case pkgAction(Int) //离线包操作
     case otherAction(Int) //其他按钮操作
 }
@@ -28,8 +28,9 @@ public class PTDebugView: UIView {
     
     public var reloadButtonEvent :DebugButtonEvent?
     
-    public var defaultApiUrl: String = ""
-    public var baseWebUrl: String = ""
+    public var headInfoLog: String?
+//    public var defaultApiUrl: String = ""
+//    public var baseWebUrl: String = ""
     
     public static func addLog(_ log : String) {
 #if DEBUG
@@ -43,8 +44,10 @@ public class PTDebugView: UIView {
         self.clickButtonEvent = debugEvent
         self.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
+//            maker.top.equalToSuperview()
+//            maker.left.bottom.right.equalToSuperview()
         }
-        defaultApiUrl = apiURL
+//        defaultApiUrl = apiURL
         self.setUI()
         self.isHidden = true
         
@@ -65,12 +68,16 @@ public class PTDebugView: UIView {
             if self.isHidden {
                 self.isHidden = false
                 //                self.superview?.bringSubviewToFront(self)
-                let url = "Base URL : " + defaultApiUrl + "\n"
-                let weburl = "Web  URL : " + baseWebUrl  + "\n"
-                let appVersion = kAppVersion ?? ""
-                let appBuildVersion = kAppBuildVersion ?? ""
-                let build = "App Version : " + appVersion + "   build version : " + appBuildVersion  + "\n\n\n"
-                self.debugTextView.text = url + weburl + build + web_log
+//                let url = "Base URL : " + defaultApiUrl + "\n"
+//                let weburl = "Web  URL : " + baseWebUrl  + "\n"
+//                let appVersion = kAppVersion ?? ""
+//                let appBuildVersion = UserDefaults.webVersion ?? ""
+//                let build = "App Version : " + appVersion + "   web version : " + appBuildVersion  + "\n\n\n"
+                if let info = self.headInfoLog {
+                    self.debugTextView.text = info + web_log
+                } else {
+                    self.debugTextView.text = web_log
+                }
             }
         }
     }
@@ -144,7 +151,7 @@ public class PTDebugView: UIView {
         self.debugTextView.text = ""
         
         if self.clickButtonEvent != nil {
-            self.clickButtonEvent?(.ReloadWeb(self.baseWebUrl))
+            self.clickButtonEvent?(.ReloadWeb)
         }
     }
     

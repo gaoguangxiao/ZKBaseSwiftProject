@@ -5,7 +5,14 @@
 //  Created by 高广校 on 2024/3/25.
 //  com.readadventure.app.product.continue_buy.vip428_1
 
+
 import Foundation
+
+/// 动画协议
+public protocol AnimationScaleProtocol {
+    
+    func resetLoginBtnStatus()
+}
 
 //实现一个点击时的放大缩小动画
 public class ZKAnimationScaleBtn: UIButton {
@@ -30,12 +37,6 @@ public class ZKAnimationScaleBtn: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func resetLoginBtnStatus() {
-        UIView.animate(withDuration: 0.15) {
-            self.transform = .identity
-        }
-    }
-    
     /// 控件按压
     @objc func zkTouchDown(sender: UIButton) {
 //        print("控件按压")
@@ -54,6 +55,15 @@ public class ZKAnimationScaleBtn: UIButton {
 //        print("控件内拖动到外部时")
         UIView.animate(withDuration: 0.15) {
             sender.transform = .identity
+        }
+    }
+}
+
+extension ZKAnimationScaleBtn: AnimationScaleProtocol {
+    
+    public func resetLoginBtnStatus() {
+        UIView.animate(withDuration: 0.15) {
+            self.transform = .identity
         }
     }
 }
