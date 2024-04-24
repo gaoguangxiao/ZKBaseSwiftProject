@@ -11,7 +11,7 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SnapKit (5.7.1)
-  - ZKBaseSwiftProject (0.4.3):
+  - ZKBaseSwiftProject (0.4.4):
     - GGXSwiftExtension
     - HandyJSON
     - KeychainAccess
@@ -51,7 +51,7 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  ZKBaseSwiftProject: 567bd2faceee707647361609f1154b9a12320bb3
+  ZKBaseSwiftProject: 575450ff45151c2624ba3e40976ed5cf41cdbd39
 
 PODFILE CHECKSUM: 4d7322281ef2df0d9128fc1af5c63c774a328fce
 

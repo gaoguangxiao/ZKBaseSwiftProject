@@ -19,6 +19,8 @@ open class ZKPrivacyPolicyVC: ZKBaseViewController {
     //儿童隐私保护地址
     public var childInfoUrl: String?
     
+    public var themeColor: UIColor?
+    
     open override func hiddenNavigationBar() -> Bool {
         return true
     }
@@ -34,7 +36,9 @@ open class ZKPrivacyPolicyVC: ZKBaseViewController {
         
         let alertView = ZKPrivacyPolicyView.init(frame: CGRect.zero)
         alertView.tag = 100
-        
+        if let themeColor {
+            alertView.themeColor = themeColor
+        }
         guard let info = info else {
             print("info 内容不得为空")
             return

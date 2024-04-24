@@ -35,6 +35,17 @@ public class ZKPrivacyPolicyView: UIView {
     /// 打开URL事件
     private var openUrlEvent: ZKStringClosure?
     
+//    public var themeColor: UIColor = UIColor.hex(0xA5673C)
+    
+    public var themeColor: UIColor {
+        get {
+            return self.titleLabel.textColor
+        }
+        set {
+            self.titleLabel.backgroundColor = newValue
+            self.agreeButton.backgroundColor = newValue
+        }
+    }
     private let rate : CGFloat = {
         let deviceHeight = SCREEN_HEIGHT
         let designedHeight = CGFloat.init(UIDevice.isIPad ? 768.0 : 414.0)
