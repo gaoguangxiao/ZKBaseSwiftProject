@@ -211,41 +211,14 @@ public extension ZKBaseWKWebViewController {
     }
     
     func evaluateJavaScript(_ javaScriptString: String) {
-//        if #available(iOS 13.0, *) {
-//            Task {
-//                await MainActor.run {
-//                    if #available(iOS 14.0, *) {
-//                        self.webView.evaluateJavaScript(javaScriptString, in: .none, in: .page) { result in
-//                            self.evaluateJavaScriptCompletionHandler(result: result)
-//                        }
-//                    } else {
-                        self.webView.evaluateJavaScript(javaScriptString)
-//                    }
-//                }
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//            DispatchQueue.main.async {
-//                self.webView.evaluateJavaScript(javaScriptString)
-//            }
-//        }
+        addTaskToMainThread {
+            self.webView.evaluateJavaScript(javaScriptString)
+        }
     }
-    
-    @available(iOS 13.0.0, *)
-    func evaluateJavaScript(_ javaScriptString: String) async throws -> Any {
-        return try await self.webView.evaluateJavaScript(javaScriptString)
-    }
-    
-    func evaluateJavaScriptCompletionHandler(result: Result<Any, any Error>) {
-        //        switch result {
-        //        case .success(let data):
-        //            print("success: \(data)")
-        //            break
-        //        case .failure(let error):
-        //            print("failure: \(error)")
-        //            break
-        //        }
-    }
+//    @available(iOS 13.0.0, *)
+//    func evaluateJavaScript(_ javaScriptString: String) async throws -> Any {
+//        return try await self.webView.evaluateJavaScript(javaScriptString)
+//    }
 }
 
 

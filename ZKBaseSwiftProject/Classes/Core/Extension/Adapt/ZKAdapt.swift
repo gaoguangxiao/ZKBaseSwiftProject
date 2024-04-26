@@ -50,6 +50,10 @@ public struct ZKAdapt {
         return deviceHeight/designedHeight
     }()
     
+    public static func deviceFactor(_ standardWidth: CGFloat = UIDevice.isIPad ? 768 : 414 ) -> CGFloat {
+        return SCREEN_WIDTH_STATIC/standardWidth
+    }
+    
     public static func factor(_ ipadValue: CGFloat, _ iphoneValue: CGFloat) -> CGFloat {
         let adpt = (UIDevice.isIPad ? ipadValue : iphoneValue)
         return rate * adpt

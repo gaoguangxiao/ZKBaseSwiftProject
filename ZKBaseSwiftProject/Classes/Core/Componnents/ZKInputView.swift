@@ -61,7 +61,7 @@ public class ZKInputView : ZKBaseView {
         set { centerTextField[keyPath: keyPath] = newValue }
     }
     
-    public lazy var backgroundView = UIView().zkBackgroundColor(UIColor.white).zkLayerCornerRadius(30).zkAlpha(0.5)
+    public lazy var backgroundView = UIView().zkBackgroundColor(UIColor.init(hex: 0xFFFFFF,alpha: 0.9)).zkLayerCornerRadius(30).zkAlpha(0.5)
     
     public lazy var leftView = ZKView(UIView()).view
     public lazy var leftImageView = ZKView(UIImageView()).contentMode(.scaleAspectFit).view
