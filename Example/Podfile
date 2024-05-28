@@ -10,7 +10,6 @@ target 'ZKBaseSwiftProject_Example' do
   
   pod 'ZKBaseSwiftProject', :path => '../'
 
-#  pod 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
 #  pod 'GGXSwiftExtension', :path => '~/Documents/GitHub/ggxswiftexten'
   
 #  target 'ZKBaseSwiftProject_Tests' do
