@@ -28,6 +28,8 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     //执行回调
     public weak var scriptMessageDelegate: WKWebScriptMessageDelegate?
     
+    public var webViewFinished: Bool = false
+    
     open override func viewDidLoad() {
         self.view.addSubview(webView)
         super.viewDidLoad()
@@ -146,14 +148,17 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
     }
     
     open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        view.hideToastActivity()
         ZKLog("web view did finish navigation ...\(Date.milliStamp)")
     }
     
+//    Invoked when an error occurs while starting to load data for
     open func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let code = (error as NSError).code
         if  code == NSURLErrorCancelled {
             return
         }
+        view.hideToastActivity()
         HUD.flash("加载失败，请检查网络")
         ZKLog("加载失败~error = \(error)")
     }
@@ -164,6 +169,7 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         if  code == NSURLErrorCancelled {
             return
         }
+        view.hideToastActivity()
         HUD.flash("加载失败，请检查网络")
         ZKLog("加载失败 error = \(error)")
     }
@@ -202,12 +208,6 @@ public extension ZKBaseWKWebViewController {
             let messageBridge = GXMessageBridge(self)
             userContentController.add(messageBridge, name: name)
         }
-    }
-    
-    /// 增加iOS15.0之后方法
-    @available(iOS 15.0, *)
-    func evaluateJavaScript(_ javaScript: String, in frame: WKFrameInfo? = nil, contentWorld: WKContentWorld) async throws -> Any? {
-        return try await self.webView.evaluateJavaScript(javaScript, in: frame, contentWorld: contentWorld)
     }
     
     func evaluateJavaScript(_ javaScriptString: String) {

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.4.4'
-  s.summary          = '修复HandyJSON私有库'
+  s.version          = '0.4.5'
+  s.summary          = '移除数据解析HandyJSON私有库'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

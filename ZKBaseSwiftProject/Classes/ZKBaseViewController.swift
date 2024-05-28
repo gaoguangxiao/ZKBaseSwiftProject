@@ -13,6 +13,9 @@ open class ZKBaseViewController: UIViewController  {
     
     public var disposeBag = DisposeBag()
     
+    /// 进入之前的屏幕方向
+    public var isBeferOrientationMask: UIInterfaceOrientationMask = .landscape
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         makeNavigationBar()

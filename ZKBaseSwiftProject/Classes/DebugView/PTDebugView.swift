@@ -16,6 +16,12 @@ public enum PTDebugViewButtonEvent {
     case otherAction(Int) //其他按钮操作
 }
 
+//PTShowCorner
+public enum TapShowCorner {
+    case leftBottom
+    case rightUp
+}
+
 public typealias DebugButtonEvent = (_ event: PTDebugViewButtonEvent) -> Void
 
 var web_log = ""
@@ -31,6 +37,10 @@ public class PTDebugView: UIView {
     public var headInfoLog: String?
 //    public var defaultApiUrl: String = ""
 //    public var baseWebUrl: String = ""
+    
+    public var tapCorner: TapShowCorner = .leftBottom
+    
+    var actionBtnTag = 0
     
     public static func addLog(_ log : String) {
 #if DEBUG
@@ -50,7 +60,7 @@ public class PTDebugView: UIView {
 //        defaultApiUrl = apiURL
         self.setUI()
         self.isHidden = true
-        
+//        self.backgroundColor = .red
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(clickEvent))
         tap.numberOfTapsRequired = 6
         //        tap.numberOfTouchesRequired = 2
@@ -64,25 +74,30 @@ public class PTDebugView: UIView {
         }
         let translation = tap.location(in:sup )
         let windowHeight = UIApplication.rootWindow?.height
-        if translation.x < 200 && translation.y > (windowHeight ?? 600) - 200 {
-            if self.isHidden {
-                self.isHidden = false
-                //                self.superview?.bringSubviewToFront(self)
-//                let url = "Base URL : " + defaultApiUrl + "\n"
-//                let weburl = "Web  URL : " + baseWebUrl  + "\n"
-//                let appVersion = kAppVersion ?? ""
-//                let appBuildVersion = UserDefaults.webVersion ?? ""
-//                let build = "App Version : " + appVersion + "   web version : " + appBuildVersion  + "\n\n\n"
-                if let info = self.headInfoLog {
-                    self.debugTextView.text = info + web_log
-                } else {
-                    self.debugTextView.text = web_log
-                }
+        //左上角
+        if tapCorner == .leftBottom {
+            if translation.x < 200 && translation.y > (windowHeight ?? 600) - 200 {
+                showDebugView()
             }
+        } else if tapCorner == .rightUp {
+            if (translation.x > (SCREEN_WIDTH - 200)) && (translation.y < 200) {
+                showDebugView()
+            }
+        } else {
+            
         }
     }
     
-    var actionBtnTag = 0
+    func showDebugView() {
+        if self.isHidden {
+            self.isHidden = false
+            if let info = self.headInfoLog {
+                self.debugTextView.text = info + web_log
+            } else {
+                self.debugTextView.text = web_log
+            }
+        }
+    }
     
     private func setUI() {
         self.backgroundColor = UIColor.white
@@ -104,7 +119,7 @@ public class PTDebugView: UIView {
         self.addButton(title: "刷新", right: 10+90, action: #selector(reload))
         self.addButton(title: "切换地址", right: 10+90+90, action: #selector(changeUrl))
         self.addButton(title: "清除log", right: 10+90+90+90, action: #selector(clearLog))
-        self.addButton(title: "打开bridge", right: 10+90+90+90+90, action: #selector(openBridgeCall))
+        self.addButton(title: "分享log", right: 10+90+90+90+90, action: #selector(openBridgeCall))
         //        self.addButton(title: "清WebStore", right: 10+90, top: 60,action: #selector(clearWebCache))
         self.addButton(title: "启用离线包", right: 10+90+90, top: 60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "禁用离线包", right: 10+90+90+90, top:60,action: #selector(didOfflineBtnCache(sender:)))
@@ -163,8 +178,18 @@ public class PTDebugView: UIView {
     
     @objc func openBridgeCall(_ sender: UIButton){
         //关闭调试
-        closeDebugView()
-        self.clickButtonEvent?(.otherAction(sender.tag))
+        self.openShareText(text: self.debugTextView.text)
+    }
+    
+    func openShareText(text: String) {
+        let vcc = UIApplication.rootWindow?.rootViewController
+        let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        if let popover = activityViewController.popoverPresentationController {
+            popover.sourceView = vcc?.view
+            popover.sourceRect = vcc?.view.bounds ?? .zero
+            popover.permittedArrowDirections = [] // 可以设置为无箭头，使其成为全屏弹窗
+        }
+        vcc?.present(activityViewController, animated: true, completion: nil)
     }
     
     @objc func clearWebCache() {
