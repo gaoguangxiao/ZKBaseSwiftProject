@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZKBaseSwiftProject'
-  s.version          = '0.4.6'
+  s.version          = '0.4.7'
   s.summary          = '移除数据解析HandyJSON私有库'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://gitee.com/gtools'
+  s.homepage         = 'https://github.com/gaoguangxiao'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '小修' => 'gaoguangxiao125@sina.com' }
-  s.source           = { :git => 'https://github.com/gaoguangxiao/ZKBaseSwiftProject', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/gaoguangxiao/ZKBaseSwiftProject.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '12.0'
