@@ -37,6 +37,13 @@ public struct ZKAdapt {
         return UIDevice.isIPad ? factorIpad : rate * 0.87533
     }()
 
+    public static let factor820: CGFloat = {
+        let deviceHeight = UIScreen.main.bounds.height
+        let designedHeight =  UIDevice.isIPad ? 820 : rate * 0.87533
+        let adpt = deviceHeight/designedHeight
+        return adpt
+    }()
+    
     public static let factorIpad: CGFloat = {
         let deviceHeight = UIScreen.main.bounds.height
         let designedHeight = CGFloat(768)
@@ -58,5 +65,11 @@ public struct ZKAdapt {
     public static func factor(_ ipadValue: CGFloat, _ iphoneValue: CGFloat) -> CGFloat {
         let adpt = (UIDevice.isIPad ? ipadValue : iphoneValue)
         return rate * adpt
+    }
+    
+    public static func factor820(_ ipadValue: CGFloat, _ iphoneValue: CGFloat) -> CGFloat {
+        let deviceHeight = SCREEN_WIDTH_STATIC
+        let designedHeight = CGFloat(UIDevice.isIPad ? 820 : 414)
+        return deviceHeight/designedHeight
     }
 }

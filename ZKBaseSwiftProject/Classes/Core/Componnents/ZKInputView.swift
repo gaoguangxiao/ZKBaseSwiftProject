@@ -23,13 +23,14 @@ public class ZKInputView : ZKBaseView {
             make.edges.equalTo(0)
         }
         leftImageView.snp.makeConstraints { make in
-            make.left.equalTo(40)
-            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.left.equalTo(40 * ZKAdapt.factor)
+//            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.size.equalTo(CGSize(width: 30 * ZKAdapt.factor, height: 30 * ZKAdapt.factor))
             make.centerY.equalToSuperview()
         }
 
         centerTextField.snp.makeConstraints { make in
-            make.left.equalTo(leftImageView.snp.right).offset(50)
+            make.left.equalTo(leftImageView.snp.right).offset(50 * ZKAdapt.factor)
             make.top.bottom.equalTo(0)
             make.right.equalTo(rightBtn.snp.left)
         }
