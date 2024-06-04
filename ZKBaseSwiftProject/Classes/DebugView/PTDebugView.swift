@@ -8,6 +8,7 @@
 
 import Foundation
 import GGXSwiftExtension
+import SnapKit
 
 public enum PTDebugViewButtonEvent {
     case ChangeUrl(PTDebugView)
@@ -28,14 +29,16 @@ var web_log = ""
 
 public class PTDebugView: UIView {
     
-    private var debugTextView =  UITextView.init().zkFont(.regular16)
+    private var debugTextView =  UITextView.init()
     
     private var clickButtonEvent :((PTDebugViewButtonEvent)->Void)? = nil
     
     public var reloadButtonEvent :DebugButtonEvent?
     
     public var headInfoLog: String?
-//    public var defaultApiUrl: String = ""
+    
+    /// 录音按钮龙智
+    public var recordLogBtn: UIButton?
 //    public var baseWebUrl: String = ""
     
     public var tapCorner: TapShowCorner = .leftBottom
@@ -104,6 +107,7 @@ public class PTDebugView: UIView {
         self.addSubview(debugTextView)
         debugTextView.backgroundColor = UIColor.white
         debugTextView.isEditable = false
+        debugTextView.font = UIFont.systemFont(ofSize: 15)
         debugTextView.snp.makeConstraints { (maker) in
             if #available(iOS 11.0, *) {
                 maker.left.equalTo(safeAreaLayoutGuide.snp.left)
@@ -120,14 +124,15 @@ public class PTDebugView: UIView {
         self.addButton(title: "切换地址", right: 10+90+90, action: #selector(changeUrl))
         self.addButton(title: "清除log", right: 10+90+90+90, action: #selector(clearLog))
         self.addButton(title: "分享log", right: 10+90+90+90+90, action: #selector(openBridgeCall))
-        //        self.addButton(title: "清WebStore", right: 10+90, top: 60,action: #selector(clearWebCache))
+        recordLogBtn = self.addButton(title: "显示开录", right: 10+90, top: 60, action: #selector(openRecordLogCall))
         self.addButton(title: "启用离线包", right: 10+90+90, top: 60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "禁用离线包", right: 10+90+90+90, top:60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "清除离线包", right: 10+90+90+90+90, top: 60, action: #selector(didOfflineBtnCache(sender:)))
+        
     }
     
-    
-    public func addButton(title:String, right:CGFloat,top: CGFloat = 10,action: Selector) {
+    @discardableResult
+    public func addButton(title:String, right:CGFloat,top: CGFloat = 10,action: Selector) -> UIButton {
         let button = UIButton.init()
         button.setTitle(title, for: UIControl.State.normal)
         button.addTarget(self, action: action, for: UIControl.Event.touchUpInside)
@@ -148,6 +153,7 @@ public class PTDebugView: UIView {
             make.top.equalTo(top)
             make.height.equalTo(40)
         }
+        return button
     }
     
     @objc func closeDebugView (){
@@ -181,6 +187,20 @@ public class PTDebugView: UIView {
         self.openShareText(text: self.debugTextView.text)
     }
     
+    @objc func openRecordLogCall(_ sender: UIButton) {
+        if let clickButtonEvent = self.clickButtonEvent {
+            clickButtonEvent(.otherAction(5))
+            if recordLogBtn?.isSelected == true {
+                recordLogBtn?.setTitle("显示开录", for: .normal)
+                recordLogBtn?.isSelected = false
+            } else {
+                recordLogBtn?.setTitle("隐藏开录", for: .normal)
+                recordLogBtn?.isSelected = true
+            }
+            
+        }
+    }
+    
     func openShareText(text: String) {
         let vcc = UIApplication.rootWindow?.rootViewController
         let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
@@ -193,7 +213,7 @@ public class PTDebugView: UIView {
     }
     
     @objc func clearWebCache() {
-        ZKUtils.removeWebsiteDataStore()
+
     }
     
     @objc func openAppTestVc(){
