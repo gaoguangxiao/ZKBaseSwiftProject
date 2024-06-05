@@ -23,16 +23,17 @@ public class ZKInputView : ZKBaseView {
             make.edges.equalTo(0)
         }
         leftImageView.snp.makeConstraints { make in
-            make.left.equalTo(40 * ZKAdapt.factor)
+            make.left.equalTo(30 * ZKAdapt.factor)
 //            make.size.equalTo(CGSize(width: 30, height: 30))
             make.size.equalTo(CGSize(width: 30 * ZKAdapt.factor, height: 30 * ZKAdapt.factor))
             make.centerY.equalToSuperview()
         }
 
         centerTextField.snp.makeConstraints { make in
-            make.left.equalTo(leftImageView.snp.right).offset(50 * ZKAdapt.factor)
-            make.top.bottom.equalTo(0)
-            make.right.equalTo(rightBtn.snp.left)
+//            make.left.equalTo(leftImageView.snp.right).offset(10 * ZKAdapt.factor)
+//            make.top.bottom.equalTo(0)
+//            make.right.equalTo(rightBtn.snp.left)
+            make.edges.equalToSuperview()
         }
         //第一方案-实现输入框 清理按钮 右边距可调
 //        centerTextField.rightView = rightView
@@ -68,15 +69,16 @@ public class ZKInputView : ZKBaseView {
     public lazy var leftImageView = ZKView(UIImageView()).contentMode(.scaleAspectFit).view
  
     public lazy var centerTextField: UITextField = {
-        let textField = ZKView(UITextField()).textColor(.zk333333).font(.regular(21)).textAlignment(.left).view
+        let textField = ZKView(UITextField()).textColor(.zk333333).font(.regular(ZKAdapt.factor820(21, 14))).textAlignment(.left).view
+        textField.textAlignment = .center
         return textField
     }()
     
     //因为UITextField的rightView中frame无法改变，只能用UIView修改
     public lazy var rightView = ZKView(UIView()).view
     
-    public lazy var rightBtn: UIButton = {
-        let btn = ZKView(UIButton(type: .custom)).view
+    public lazy var rightBtn: ZKAnimationScaleBtn = {
+        let btn = ZKAnimationScaleBtn(type: .custom).zkFont(.regular(15 * ZKAdapt.factor820)).zkSetTitleColor(.white)
         return btn
     }()
 }
