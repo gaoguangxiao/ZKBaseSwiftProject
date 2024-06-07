@@ -458,7 +458,6 @@
 		FE4F6AF8D230C0513D892B3E26C2A352 /* ZKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F58B89A15EBEB4D4F193ED77C7828A /* ZKUtils.swift */; };
 		FE73D27F3980238C491866E5A22DB109 /* KVORepresentable+CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D166D13D7272B29C76B08BA92938FD9E /* KVORepresentable+CoreGraphics.swift */; };
 		FECEA264ACF4ACA1F7C5401CE8E1A238 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71568BE8D90A1D3D9F42460266A3B59D /* HUD.swift */; };
-		FF07F6DC4051037470222B62DD21FD3D /* ZKInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0F18EE32D09B94787D747134CD1C3 /* ZKInputView.swift */; };
 		FFA8C9C13B9B9228914CAE6DE391C362 /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBF2B104F10C4B4FA9AC4BD2D9E79A /* Concat.swift */; };
 		FFD7E1B8FA0F3960BE24DA2D20647332 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B888BE2133867A477D6481B6309A0F /* ConstraintRelatableTarget.swift */; };
 /* End PBXBuildFile section */
@@ -632,7 +631,7 @@
 		02CC906709FA76BFEDB1309740FE0DF6 /* BinaryDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDisposable.swift; path = RxSwift/Disposables/BinaryDisposable.swift; sourceTree = "<group>"; };
 		0341E5CCC81D11FB3CBAA43FA5EB2836 /* ZKBaseTblView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZKBaseTblView.swift; path = ZKBaseSwiftProject/Classes/ZKBaseTblView.swift; sourceTree = "<group>"; };
 		03D63066336F9648D995A8978BCED7F9 /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSystemActivityIndicatorView.swift; path = PKHUD/PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
-		0432A3DD37F39C356186632912929E8B /* ZKBaseSwiftProject.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZKBaseSwiftProject.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0432A3DD37F39C356186632912929E8B /* ZKBaseSwiftProject.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ZKBaseSwiftProject.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0459E87289B07ACC66E6A1FE0F65D0BB /* UITableView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Rx.swift"; path = "RxCocoa/iOS/UITableView+Rx.swift"; sourceTree = "<group>"; };
 		04C4DEA1F628942836F06B2E3B053F0A /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
 		0511CFFAD924C76DDAAA31C4F872A16B /* ObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableType.swift; path = RxSwift/ObservableType.swift; sourceTree = "<group>"; };
@@ -806,7 +805,7 @@
 		61495CA37230892A8917C05B5AEA8E23 /* KeychainAccess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.debug.xcconfig; sourceTree = "<group>"; };
 		61B20A4CE1ECBA0CE5EF8756605AD6D7 /* ConcurrentDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentDispatchQueueScheduler.swift; path = RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift; sourceTree = "<group>"; };
 		61DC5BCE1F4F62FEFB16651C74AE0FFD /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = RxCocoa/Traits/Signal/Signal.swift; sourceTree = "<group>"; };
-		61F90D42B534B62B84FDB0555FFF10CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		61F90D42B534B62B84FDB0555FFF10CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		62365D1B5678CDDE446B81A5D7330F15 /* Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Driver.swift; path = RxCocoa/Traits/Driver/Driver.swift; sourceTree = "<group>"; };
 		625BF36043AD1B38E7BCB6008B0D0CB8 /* ScheduledDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledDisposable.swift; path = RxSwift/Disposables/ScheduledDisposable.swift; sourceTree = "<group>"; };
 		6340473C567B36DD11B924A0B5E027FA /* Completable+AndThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Completable+AndThen.swift"; path = "RxSwift/Traits/PrimitiveSequence/Completable+AndThen.swift"; sourceTree = "<group>"; };
@@ -930,10 +929,9 @@
 		9C1A97629734BCC63E8869E15FF77779 /* CurrentThreadScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentThreadScheduler.swift; path = RxSwift/Schedulers/CurrentThreadScheduler.swift; sourceTree = "<group>"; };
 		9C222E54051C3299A492B296026B2628 /* UITabBar+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBar+Rx.swift"; path = "RxCocoa/iOS/UITabBar+Rx.swift"; sourceTree = "<group>"; };
 		9CB09BCDDE384FAF764770C9A83E8BB1 /* ControlEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlEvent.swift; path = RxCocoa/Traits/ControlEvent.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E5A560028869793D00A272517632121 /* GGXSwiftExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GGXSwiftExtension.modulemap; sourceTree = "<group>"; };
 		9E64FD0D6DDC4ADD6F8BE4CB7FB6F355 /* AnonymousObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousObserver.swift; path = RxSwift/Observers/AnonymousObserver.swift; sourceTree = "<group>"; };
-		9EB0F18EE32D09B94787D747134CD1C3 /* ZKInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZKInputView.swift; sourceTree = "<group>"; };
 		9F70B30D7EA8AB9D7E8B42CED64EF53A /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		A0BE5EF4BC531671388C2957BFB3E9AD /* Reduce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reduce.swift; path = RxSwift/Observables/Reduce.swift; sourceTree = "<group>"; };
 		A1A61FE3F1235D7F014C9D3CB4705620 /* Observable+Bind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Bind.swift"; path = "RxCocoa/Common/Observable+Bind.swift"; sourceTree = "<group>"; };
@@ -1023,7 +1021,7 @@
 		CB333A811A2F73F89F49D9A624743B14 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Sources/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		CC12E4CFC543C02DA47CA4A99C8B6EAE /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
 		CC547370DB6FF7324EA2BB999A05E5AC /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
-		CC57115DC46CFFFD717ED6FDBE6F421C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CC57115DC46CFFFD717ED6FDBE6F421C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CC8E0006C19C3D90FA804C86E4679595 /* ObservableConvertibleType+Infallible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableConvertibleType+Infallible.swift"; path = "RxSwift/Traits/Infallible/ObservableConvertibleType+Infallible.swift"; sourceTree = "<group>"; };
 		CE3E4C248523D2A68893FBCC019DBDC4 /* RxTabBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTabBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTabBarDelegateProxy.swift; sourceTree = "<group>"; };
 		CE6083D9E2C3FD0BAC16C8D8402E54A7 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
@@ -1054,7 +1052,7 @@
 		D764B4BB0EA0ABC19DF174217701DFCA /* NSButton+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Rx.swift"; path = "RxCocoa/macOS/NSButton+Rx.swift"; sourceTree = "<group>"; };
 		D79968955B355E6B76FB3CD759503C52 /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
 		D8578D170A5DB81D1A913E2C14AC76C7 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		D8911D8009A269FE21D6855969D16EB6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D8911D8009A269FE21D6855969D16EB6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D989121C9805C3404C1560ED758E3A58 /* Pods-ZKBaseSwiftProject_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZKBaseSwiftProject_Example-dummy.m"; sourceTree = "<group>"; };
 		D9EA1571FE3C6862F3CD30D9BEC3E4A2 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		DC026EE816EB5AE704524B42D6D49F5A /* ConcurrentMainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentMainScheduler.swift; path = RxSwift/Schedulers/ConcurrentMainScheduler.swift; sourceTree = "<group>"; };
@@ -1097,7 +1095,7 @@
 		EA5D06091AC8B1149D48D8EA3C554EE8 /* ZKBaseSwiftProject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZKBaseSwiftProject; path = ZKBaseSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF0845F9BD16AFC0E118E3A97BFC673 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = RxSwift/Observables/Filter.swift; sourceTree = "<group>"; };
 		EBF7DB9D8270E1D35CADA43541916F22 /* UITabBarController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBarController+Rx.swift"; path = "RxCocoa/iOS/UITabBarController+Rx.swift"; sourceTree = "<group>"; };
-		ED7DE14FBDFDF9F83108C9424B9F62E0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		ED7DE14FBDFDF9F83108C9424B9F62E0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EDBDED3AB6EEDD4C5AFF9BEE3E95B22E /* RxPickerViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxPickerViewDelegateProxy.swift; sourceTree = "<group>"; };
 		EDDAF13E1B5F2A0B0243305EDD119E7A /* SectionedViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionedViewDataSourceType.swift; path = RxCocoa/Common/SectionedViewDataSourceType.swift; sourceTree = "<group>"; };
 		EE2B117F7A3CB312FF54BFF9D46B0180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1416,7 +1414,6 @@
 				64D206F983907FB07C6A2DC49C85A88A /* Resources */,
 				13A0CEB013F7D7C6BC242111CC27C62D /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1461,7 +1458,6 @@
 				B3FC48E66BA53D4DB0FD8C61D39D9130 /* Keychain.swift */,
 				12E8054682C7B0F6E2778C0226F5463A /* Support Files */,
 			);
-			name = KeychainAccess;
 			path = KeychainAccess;
 			sourceTree = "<group>";
 		};
@@ -1483,7 +1479,6 @@
 				92C0C5DA4EFB01293B88FBC072CF1C4D /* Adapt */,
 				D3023BE429D275EDE742B6E8760EDD3A /* UIChain */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -1526,7 +1521,6 @@
 			children = (
 				DF4C37D9C1D2A1FE60862B3AA5AAABDE /* ZKAdapt.swift */,
 			);
-			name = Adapt;
 			path = Adapt;
 			sourceTree = "<group>";
 		};
@@ -1535,9 +1529,7 @@
 			children = (
 				3B0E5E52BEE56CA13E99B43160A596C7 /* Toast.swift */,
 				EFC488A42B11E7526DD0C1098A4CED20 /* ZKButtonCheckBox.swift */,
-				9EB0F18EE32D09B94787D747134CD1C3 /* ZKInputView.swift */,
 			);
-			name = Componnents;
 			path = Componnents;
 			sourceTree = "<group>";
 		};
@@ -1548,7 +1540,6 @@
 				A71DB1736B12D77FFAF95DFA385BB5FD /* Resources */,
 				0357DD0BE6770477AA5F2300587F330B /* Support Files */,
 			);
-			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -1565,7 +1556,6 @@
 				926E65A3E79FFB4BCB271962237814A3 /* ZKTaskThreadTool.swift */,
 				50F58B89A15EBEB4D4F193ED77C7828A /* ZKUtils.swift */,
 			);
-			name = Tool;
 			path = Tool;
 			sourceTree = "<group>";
 		};
@@ -1612,7 +1602,6 @@
 			children = (
 				AAD88040205A9F44E4310B60AC3CDC17 /* ZKClosureType.swift */,
 			);
-			name = Closure;
 			path = Closure;
 			sourceTree = "<group>";
 		};
@@ -1659,7 +1648,6 @@
 				07A1331FD552254303C395AA7DA24638 /* WKWebView+Extension.swift */,
 				CD877AB2B70E29464B861B40ACC5251E /* Support Files */,
 			);
-			name = GGXSwiftExtension;
 			path = GGXSwiftExtension;
 			sourceTree = "<group>";
 		};
@@ -1830,7 +1818,6 @@
 				AEA734234C09EB5F7B18230687652908 /* Zip+Collection.swift */,
 				014F6B06F6DAE77669C44D7F812F9523 /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -1857,7 +1844,6 @@
 				B780022F9612C082C778FEE3A9350C65 /* Resources */,
 				D346914C1C3B2912B108398AF577A517 /* Support Files */,
 			);
-			name = PKHUD;
 			path = PKHUD;
 			sourceTree = "<group>";
 		};
@@ -1977,7 +1963,6 @@
 				72B5410307024D0A398238E86F013B14 /* WKWebView+Rx.swift */,
 				816699505E1004B489B5F6A708F9C8AC /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -2020,7 +2005,6 @@
 				22C68EAECA414B0E8C12F2B576A29DD5 /* UITextView+ZK.swift */,
 				16111CB727398FB7F4D6873A9795BC71 /* UIView+ZK.swift */,
 			);
-			name = UIChain;
 			path = UIChain;
 			sourceTree = "<group>";
 		};
@@ -2050,7 +2034,6 @@
 				52090130023D51B1A8D0B71583FE2B39 /* Utils.swift */,
 				197E6662A2F2BCB7EA7CDC8E831F8D8B /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -2060,7 +2043,6 @@
 				A27E66DBE40BB8687CEFC311DF81F5B3 /* ZKOperator.swift */,
 				5CFE8759D0A6B7E716B785F2AFEC00DA /* ZKViewOperator.swift */,
 			);
-			name = Operator;
 			path = Operator;
 			sourceTree = "<group>";
 		};
@@ -2859,7 +2841,6 @@
 				500ECB8377EC815921DE0F18E8959E04 /* ZKButton.swift in Sources */,
 				3D77D360A60F838E289AE4494862C1D5 /* ZKButtonCheckBox.swift in Sources */,
 				2360D795E135BF9DAB886ED3DA34E4C5 /* ZKClosureType.swift in Sources */,
-				FF07F6DC4051037470222B62DD21FD3D /* ZKInputView.swift in Sources */,
 				AFC47245AC33A38DB94DFEDCDF784742 /* ZKLog.swift in Sources */,
 				411CC21C5B24751FC0B4D9AB21FC5509 /* ZKNavigationView.swift in Sources */,
 				AEC501DA32BF682A8783CB7770CA5EE4 /* ZKNetCheckHelper.swift in Sources */,
@@ -3800,8 +3781,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

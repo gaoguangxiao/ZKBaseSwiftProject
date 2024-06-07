@@ -36,12 +36,16 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
         self.buildUI()
     }
     
-//    navigationBarHeightRelative
+    // 横屏
+    public override func navigationHeight() -> CGFloat {
+        return UIDevice.TopBarHeighttRelative()
+    }
+
     open func buildUI() {
         webView.snp.makeConstraints { (maker) in
             maker.leading.equalTo(0)
             maker.trailing.equalTo(0)
-            maker.top.equalTo(TopBarHeight)
+            maker.top.equalTo(UIDevice.TopBarHeighttRelative())
             maker.bottom.equalTo(0)
         }
         
