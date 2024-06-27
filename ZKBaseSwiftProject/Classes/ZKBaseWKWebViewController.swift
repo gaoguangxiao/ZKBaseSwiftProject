@@ -11,6 +11,7 @@ import SnapKit
 import GGXSwiftExtension
 import PKHUD
 import RxCocoa
+import PTDebugView
 
 public let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 

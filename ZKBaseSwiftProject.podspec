@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.0.3'
-    s.summary          = '横屏导航栏'
+    s.version          = '1.0.4'
+    s.summary          = '隔离log库'
     
     # This description is used to generate tags and improve search results.
     #   * Think: What does it do? Why did you write it? What is the focus?
@@ -45,5 +45,6 @@ Pod::Spec.new do |s|
     s.dependency 'RxSwift'
     s.dependency 'RxCocoa'
     s.dependency 'KeychainAccess'
+    s.dependency 'PTDebugView'
     
 end

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PTDebugView
 
 public class GXTaskDownTimer: NSObject {
     
@@ -28,10 +29,10 @@ public class GXTaskDownTimer: NSObject {
         } else {
             //定时器初始化
             idleTime = Timer.scheduledTimer(withTimeInterval:1, repeats: true) { [weak self] t in
-                guard let self = self else {
+                guard let self else {
                     return
                 }
-                self.updateIdleTime(t)
+                updateIdleTime(t)
             }
         }
         idleRetainCount = retaminCount

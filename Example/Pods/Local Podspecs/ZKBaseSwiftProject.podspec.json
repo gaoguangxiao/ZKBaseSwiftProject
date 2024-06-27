@@ -1,7 +1,7 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "1.0.0",
-  "summary": "更换数据解析私有库",
+  "version": "1.0.3",
+  "summary": "横屏导航栏",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "1.0.0"
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "12.0"
@@ -40,6 +40,9 @@
 
     ],
     "KeychainAccess": [
+
+    ],
+    "PTDebugView": [
 
     ]
   },
