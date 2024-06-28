@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.0.5'
-    s.summary          = '定时器主线程切换问题'
+    s.version          = '1.0.6'
+    s.summary          = '定时器增加可控间隔'
     
     # This description is used to generate tags and improve search results.
     #   * Think: What does it do? Why did you write it? What is the focus?
