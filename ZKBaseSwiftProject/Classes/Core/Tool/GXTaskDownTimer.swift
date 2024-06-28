@@ -27,6 +27,7 @@ public class GXTaskDownTimer: NSObject {
         if idleTime != nil {
             
         } else {
+            
             //定时器初始化
             idleTime = Timer.scheduledTimer(withTimeInterval:1, repeats: true) { [weak self] t in
                 guard let self else {
@@ -34,14 +35,23 @@ public class GXTaskDownTimer: NSObject {
                 }
                 updateIdleTime(t)
             }
+            //定时器需要在运行循环（Run Loop）的线程上才能正常工作。主线程自动开启运行循环，但子线程需要手动启动。
+            self.idleTimerComplete = block
+            if !Thread.isMainThread {
+                idleRetainCount = retaminCount + 1
+                if let idleTime {
+                    RunLoop.current.add(idleTime, forMode: .common)
+                    RunLoop.current.run()
+                }
+            } else {
+                idleRetainCount = retaminCount
+            }
         }
-        idleRetainCount = retaminCount
-        self.idleTimerComplete = block
     }
     
     @objc func updateIdleTime(_ timer: Timer) {
         idleRetainCount -= 1
-//        ZKLog("进入系统倒计时：\(idleRetainCount)")
+        //        ZKLog("进入系统倒计时：\(idleRetainCount)")
         if idleRetainCount <= 0 {
             idleTime?.invalidate()
             idleTime = nil
