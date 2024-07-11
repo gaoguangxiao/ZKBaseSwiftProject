@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import GGXSwiftExtension
 
 public class ZKDiskTool: NSObject{
+    
     
     public static let shared = ZKDiskTool()
     
     var audiosCachePath: String {
-        return (FileManager.cachesPath ?? "") + "/Record/"
+        return (FileManager.cachesPath ?? "") + "/record/"
     }
     
     //在Caches文件下创建指定文件夹
@@ -28,15 +30,15 @@ public class ZKDiskTool: NSObject{
         let filePath = audiosCachePath + path.stringByDeletingLastPathComponent
         
         FileManager.createFolder(atPath:filePath)
-
+        
         return filePath + "/" + "\(getAudioName(path))" + "." + "\(fileExt)"
     }
 }
 
 /// 音频文件
-public extension ZKDiskTool {
+extension ZKDiskTool {
     
-    func createRecordAudioPathAndRemoveOldPath(path:String ,fileExt: String) -> String {
+    public func createRecordAudioPathAndRemoveOldPath(path:String ,fileExt: String) -> String {
         let recordPath = self.createAudioRecordpath(path: path, fileExt: fileExt)
         //判断音频文件是否存在，移除旧音频文件
         if FileManager.isFileExists(atPath: recordPath) {
@@ -49,21 +51,52 @@ public extension ZKDiskTool {
         return audiosCachePath + path + "\(getAudioName(path))"
     }
     
-    /// 带文件类型
-    func getAudioCacheLocalPath(_ path:String) -> String {
-        return audiosCachePath + path
-    }
-    
     func getAudioName(_ path:String) -> String {
         return path.lastPathComponent
     }
     
-    func clearAudiosCache(path: String) -> Bool{
-        let filePath = getAudioCacheLocalPath(path)
-        return FileManager.removefile(atPath: filePath)
+    /// 带文件类型
+    public func getAudioCacheLocalPath(_ path:String) -> String? {
+        //判断是否存在此文件
+        var filePath = "\(audiosCachePath)\(path)"
+        if FileManager.isFileExists(atPath: filePath) {
+            return filePath
+        }
+        
+        guard let caches = FileManager.cachesPath else { return nil }
+        filePath = "\(caches)\(path)"
+        if FileManager.isFileExists(atPath: filePath) {
+            return filePath
+        }
+        
+        return nil
     }
     
-    func clearAudiosCache() -> Bool{
+    public func clearAudiosCache(path: String) -> Bool{
+        //对某条音频文件进行清理
+        if let filePath = getAudioCacheLocalPath(path) {
+            return FileManager.removefile(atPath: filePath)
+        }
+        //对音频目录进行清理
+        return false
+    }
+    
+    public func clearAudiosCache(folder: String? = nil) -> Bool {
+        guard let folder  else { 
+            return clearAudiosCache()
+        }
+        //对文件目录进行清理`synthesizer`、`Record` 两个目录
+        guard let caches = FileManager.cachesPath else { return false }
+        
+        let folderPath = "\(caches)/\(folder)"
+        
+        FileManager.removefolder(atPath: folderPath)
+
+        return false
+    }
+    
+    public func clearAudiosCache() -> Bool {
+        
         return FileManager.removefolder(atPath: audiosCachePath)
     }
 }
