@@ -61,6 +61,11 @@ public class GXTaskDownTimer: NSObject {
         self.idleTimerComplete?(idleRetainCount)
     }
     
+    public func removeInvalidate() {
+        idleTime?.invalidate()
+        idleTime = nil
+    }
+    
     deinit {
         ZKLog("\(self)deinit")
     }

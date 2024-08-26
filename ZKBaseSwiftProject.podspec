@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.0.7'
-    s.summary          = 'feat：GXDiskTool增加对缓存文件夹的清理'
+    s.version          = '1.0.8'
+    s.summary          = 'feat：GXTaskDownTimer主动停止需要关闭内部定时'
     
     # This description is used to generate tags and improve search results.
     #   * Think: What does it do? Why did you write it? What is the focus?
