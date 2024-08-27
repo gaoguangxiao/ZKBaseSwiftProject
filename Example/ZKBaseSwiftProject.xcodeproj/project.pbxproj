@@ -16,6 +16,7 @@
 		1E7261B92AFB9002008D5275 /* KJLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261B82AFB9002008D5275 /* KJLoginViewController.swift */; };
 		1E7261BB2AFB94EE008D5275 /* PPSMSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */; };
 		1E7261BD2AFBA765008D5275 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */; };
+		1E8902D42C7D65E000B8A6F5 /* TaskDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8902D32C7D65E000B8A6F5 /* TaskDownTimer.swift */; };
 		1E8D9F7B2BA033880089910D /* JKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D9F7A2BA033880089910D /* JKWebView.swift */; };
 		3A0381B441141051764DE9FC /* Pods_ZKBaseSwiftProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622DCCB201856899385244E6 /* Pods_ZKBaseSwiftProject_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		1E7261BA2AFB94EE008D5275 /* PPSMSLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSMSLoginController.swift; sourceTree = "<group>"; };
 		1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
 		1E7261BE2AFBA7E2008D5275 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1E8902D32C7D65E000B8A6F5 /* TaskDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDownTimer.swift; sourceTree = "<group>"; };
 		1E8D9F7A2BA033880089910D /* JKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKWebView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ZKBaseSwiftProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBaseSwiftProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				1E8D9F7A2BA033880089910D /* JKWebView.swift */,
 				1E7261BC2AFBA765008D5275 /* AppBaseViewController.swift */,
+				1E8902D32C7D65E000B8A6F5 /* TaskDownTimer.swift */,
 				1E7261BE2AFBA7E2008D5275 /* PrefixHeader.pch */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -363,6 +366,7 @@
 				1E6148872AB869D3003E651B /* KJTabBarViewController.swift in Sources */,
 				1E6148882AB869D3003E651B /* KJHomeViewController.swift in Sources */,
 				1E8D9F7B2BA033880089910D /* JKWebView.swift in Sources */,
+				1E8902D42C7D65E000B8A6F5 /* TaskDownTimer.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
