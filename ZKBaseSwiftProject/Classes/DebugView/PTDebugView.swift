@@ -129,6 +129,7 @@ public class PTDebugView: UIView {
         self.addButton(title: "启用离线包", right: 10+90+90, top: 60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "禁用离线包", right: 10+90+90+90, top:60,action: #selector(didOfflineBtnCache(sender:)))
         self.addButton(title: "清除离线包", right: 10+90+90+90+90, top: 60, action: #selector(didOfflineBtnCache(sender:)))
+        self.addButton(title: "伙伴之家", right: 10, top: 110, action: #selector(didClickOther(sender:)))
         
     }
     
@@ -213,8 +214,10 @@ public class PTDebugView: UIView {
         vcc?.present(activityViewController, animated: true, completion: nil)
     }
     
-    @objc func clearWebCache() {
-
+    @objc func didClickOther(sender: UIButton) {
+        if let clickButtonEvent = self.clickButtonEvent {
+            clickButtonEvent(.otherAction(sender.tag))
+        }
     }
     
     @objc func openAppTestVc(){
