@@ -90,6 +90,16 @@ public struct ZKUtils {
         return newUA
     }
     
+    //事件上报属性必带
+    public static var baseDeviceInfo: String {
+        let appVersion = kAppVersion ?? ""
+        let sysVersion = UIDevice.currentSystemVersion
+        let deviceModel = UIDevice.modelName
+        let date = Date.getCurrentDateStr("yyyy/MM/dd HH:mm:ss")
+        let baseInfo = "\(date):\(deviceModel)-\(sysVersion)-V\(appVersion)-udid:\(ZKUtils.deviceIdentifier)"
+        return baseInfo
+    }
+    
     static func removeWebsiteDataStore() {
 //        WKWebsiteDataStore.removeWebsiteDataStore()
     }
