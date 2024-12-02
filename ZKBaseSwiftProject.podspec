@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.0.9'
-    s.summary          = 'feat：伙伴之家测试按钮'
+    s.version          = '1.1.0'
+    s.summary          = 'feat：tbl列表父类'
     
     # This description is used to generate tags and improve search results.
     #   * Think: What does it do? Why did you write it? What is the focus?
