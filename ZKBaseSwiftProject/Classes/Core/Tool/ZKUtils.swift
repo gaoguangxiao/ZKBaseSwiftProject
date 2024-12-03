@@ -95,8 +95,8 @@ public struct ZKUtils {
         let appVersion = kAppVersion ?? ""
         let sysVersion = UIDevice.currentSystemVersion
         let deviceModel = UIDevice.modelName
-        let date = Date.getCurrentDateStr("yyyy/MM/dd HH:mm:ss")
-        let baseInfo = "\(date):\(deviceModel)-\(sysVersion)-V\(appVersion)-udid:\(ZKUtils.deviceIdentifier)"
+//        let date = Date.getCurrentDateStr("yyyy/MM/dd HH:mm:ss")
+        let baseInfo = "\(deviceModel)-\(sysVersion)-V\(appVersion)-udid:\(ZKUtils.deviceIdentifier)"
         return baseInfo
     }
     
