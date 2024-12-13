@@ -1,21 +1,19 @@
 PODS:
-  - GGXSwiftExtension (0.5.7)
+  - GGXSwiftExtension (0.7.4)
   - KeychainAccess (4.2.2)
-  - PKHUD (5.3.0)
-  - PTDebugView (0.1.6):
+  - PTDebugView (0.1.9):
     - GGXSwiftExtension
-  - ReachabilitySwift (5.2.3)
-  - RxCocoa (6.7.1):
-    - RxRelay (= 6.7.1)
-    - RxSwift (= 6.7.1)
-  - RxRelay (6.7.1):
-    - RxSwift (= 6.7.1)
-  - RxSwift (6.7.1)
+  - ReachabilitySwift (5.2.4)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
   - SnapKit (5.7.1)
-  - ZKBaseSwiftProject (1.1.3):
+  - ZKBaseSwiftProject (1.1.4):
     - GGXSwiftExtension
     - KeychainAccess
-    - PKHUD
     - PTDebugView
     - ReachabilitySwift
     - RxCocoa
@@ -29,7 +27,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - GGXSwiftExtension
     - KeychainAccess
-    - PKHUD
     - PTDebugView
     - ReachabilitySwift
     - RxCocoa
@@ -42,17 +39,16 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GGXSwiftExtension: 3aebdd5e98bb4ff6edb1916db09c1a2952c55d5c
+  GGXSwiftExtension: 438330b80997b69e09968004588ce41d8ff36583
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  PTDebugView: e916e2df5f0d12de195e7891c0a44e48845390ae
-  ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
-  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
-  RxRelay: 4151ba01152436b08271e08410135e099880eae5
-  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
+  PTDebugView: c719fbcf92bbcad675a9fba8a6206e863d8d021c
+  ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  ZKBaseSwiftProject: 1721c9a5f6c919458387e0e190c4fc6f2f1a6dea
+  ZKBaseSwiftProject: 4bd21b2ddae477350e2f4f21ce42f79f66fbcd86
 
-PODFILE CHECKSUM: 883b66227646cbbc8431827af184749a64e936da
+PODFILE CHECKSUM: 15c532f36a0cc8b5a5bd0affdca4114632d86c2d
 
 COCOAPODS: 1.16.1

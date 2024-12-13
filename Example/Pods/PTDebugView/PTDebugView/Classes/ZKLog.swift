@@ -80,6 +80,12 @@ public class ZKWLog: NSObject {
     
 }
 
+public func ZKTLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
+    #if DEBUG
+    print("\(Date.getCurrentDateStr("yyyy-MM-dd HH:mm:ss SSS"))、\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+    #endif
+}
+
 public func ZKLog<T>( _ message: T, file: String = #file, method: String = #function, line: Int = #line){
     #if DEBUG
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")

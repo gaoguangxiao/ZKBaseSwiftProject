@@ -1,6 +1,6 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "summary": "feat：事件上报基类数据-UA增加UUID",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "1.1.3"
+    "tag": "1.1.4"
   },
   "platforms": {
     "ios": "12.0"
@@ -28,9 +28,6 @@
 
     ],
     "ReachabilitySwift": [
-
-    ],
-    "PKHUD": [
 
     ],
     "RxSwift": [

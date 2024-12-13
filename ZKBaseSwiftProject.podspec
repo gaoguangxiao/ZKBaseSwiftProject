@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.1.4'
+    s.version          = '1.1.5'
     s.summary          = 'feat：事件上报基类数据-UA增加UUID'
     
     # This description is used to generate tags and improve search results.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
     s.dependency 'SnapKit'
     s.dependency 'GGXSwiftExtension'
     s.dependency 'ReachabilitySwift'
-    s.dependency 'PKHUD'
+#    s.dependency 'PKHUD'
     s.dependency 'RxSwift'
     s.dependency 'RxCocoa'
     s.dependency 'KeychainAccess'
