@@ -12,7 +12,7 @@ PODS:
     - RxSwift (= 6.7.1)
   - RxSwift (6.7.1)
   - SnapKit (5.7.1)
-  - ZKBaseSwiftProject (1.0.3):
+  - ZKBaseSwiftProject (1.1.3):
     - GGXSwiftExtension
     - KeychainAccess
     - PKHUD
@@ -51,8 +51,8 @@ SPEC CHECKSUMS:
   RxRelay: 4151ba01152436b08271e08410135e099880eae5
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  ZKBaseSwiftProject: 54b0be6650eee593b1cda5dc2018659222eb2508
+  ZKBaseSwiftProject: 1721c9a5f6c919458387e0e190c4fc6f2f1a6dea
 
-PODFILE CHECKSUM: 81f17894c5c938e45612293dab2cdd440e563a0d
+PODFILE CHECKSUM: 883b66227646cbbc8431827af184749a64e936da
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.16.1
