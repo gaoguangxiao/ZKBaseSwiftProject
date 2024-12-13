@@ -86,7 +86,7 @@ public struct ZKUtils {
         } else {
             systemName = "iPhone OS"
         }
-        let newUA = "Mozilla/5.0 (\(UIDevice.current.model); CPU \(systemName) \(systemVersion) like Mac OS X; \(UIDevice.modelName)) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
+        let newUA = "Mozilla/5.0 (\(UIDevice.current.model); CPU \(systemName) \(systemVersion) like Mac OS X; \(UIDevice.modelName)) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/\(UIDevice.modelName) UUID/\(deviceIdentifier)"
         return newUA
     }
     
