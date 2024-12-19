@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.1.6'
+    s.version          = '1.1.7'
     s.summary          = 'feat：移除PTDebugView的支持'
     
     # This description is used to generate tags and improve search results.
@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
     s.dependency 'SnapKit'
     s.dependency 'GGXSwiftExtension'
     s.dependency 'ReachabilitySwift'
-#    s.dependency 'PKHUD'
     s.dependency 'RxSwift'
     s.dependency 'RxCocoa'
     s.dependency 'KeychainAccess'
