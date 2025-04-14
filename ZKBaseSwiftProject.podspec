@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.1.8'
+    s.version          = '1.2.0'
     s.summary          = 'feat：移除PTDebugView的支持'
     
     # This description is used to generate tags and improve search results.

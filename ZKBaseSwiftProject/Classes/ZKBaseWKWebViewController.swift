@@ -31,6 +31,12 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     
     public var webViewFinished: Bool = false
     
+//    public override var nav: ZKNavigationView {
+//        get {
+//            navView
+//        }
+//    }
+    
     open override func viewDidLoad() {
         self.view.addSubview(webView)
         super.viewDidLoad()
