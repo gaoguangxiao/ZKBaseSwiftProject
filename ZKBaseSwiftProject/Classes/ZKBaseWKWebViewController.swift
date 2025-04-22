@@ -11,7 +11,7 @@ import SnapKit
 import GGXSwiftExtension
 //import PKHUD
 import RxCocoa
-import PTDebugView
+//import PTDebugView
 
 public let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 
@@ -135,7 +135,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
             }
             
             if let url = URL.init(string: urlString) {
-                ZKLog("web url is: \(urlString)")
+//                ZKLog("web url is: \(urlString)")
                 let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 8)
                 webView.load(request)
             }
@@ -154,13 +154,13 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
     }
     
     open func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        ZKLog("web view begin loading main fram ...")
+//        ZKLog("web view begin loading main fram ...")
         
     }
     
     open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         view.hideToastActivity()
-        ZKLog("web view did finish navigation ...\(Date.milliStamp)")
+//        ZKLog("web view did finish navigation ...\(Date.milliStamp)")
     }
     
 //    Invoked when an error occurs while starting to load data for
@@ -171,7 +171,7 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         }
         view.hideToastActivity()
 //        HUD.flash("加载失败，请检查网络")
-        ZKLog("加载失败~error = \(error)")
+//        ZKLog("加载失败~error = \(error)")
     }
     
     open func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -182,7 +182,7 @@ extension ZKBaseWKWebViewController: WKNavigationDelegate, UIScrollViewDelegate 
         }
         view.hideToastActivity()
 //        HUD.flash("加载失败，请检查网络")
-        ZKLog("加载失败 error = \(error)")
+//        ZKLog("加载失败 error = \(error)")
     }
     
     //    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {

@@ -1,6 +1,6 @@
 {
   "name": "ZKBaseSwiftProject",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "summary": "feat：移除WKWebView的拦截加载",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/ZKBaseSwiftProject.git",
-    "tag": "1.2.1"
+    "tag": "1.3.0"
   },
   "platforms": {
     "ios": "12.0"
@@ -26,8 +26,7 @@
     "ReachabilitySwift": [],
     "RxSwift": [],
     "RxCocoa": [],
-    "KeychainAccess": [],
-    "PTDebugView": []
+    "KeychainAccess": []
   },
   "swift_version": "5.0"
 }

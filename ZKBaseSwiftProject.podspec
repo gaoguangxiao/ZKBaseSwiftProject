@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.3.0'
+    s.version          = '1.3.1'
     s.summary          = 'feat：移除WKWebView的拦截加载'
     
     # This description is used to generate tags and improve search results.
@@ -44,6 +44,6 @@ Pod::Spec.new do |s|
     s.dependency 'RxSwift'
     s.dependency 'RxCocoa'
     s.dependency 'KeychainAccess'
-    s.dependency 'PTDebugView'
+#    s.dependency 'PTDebugView'
     
 end
