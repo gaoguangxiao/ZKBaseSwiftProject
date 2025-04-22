@@ -1,18 +1,18 @@
 PODS:
-  - GGXSwiftExtension (0.7.4)
+  - GGXSwiftExtension (0.8.7)
   - KeychainAccess (4.2.2)
   - PTDebugView (0.3.2):
     - GGXSwiftExtension
     - SnapKit
   - ReachabilitySwift (5.2.4)
-  - RxCocoa (6.8.0):
-    - RxRelay (= 6.8.0)
-    - RxSwift (= 6.8.0)
-  - RxRelay (6.8.0):
-    - RxSwift (= 6.8.0)
-  - RxSwift (6.8.0)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
   - SnapKit (5.7.1)
-  - ZKBaseSwiftProject (1.2.0):
+  - ZKBaseSwiftProject (1.2.1):
     - GGXSwiftExtension
     - KeychainAccess
     - PTDebugView
@@ -40,15 +40,15 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GGXSwiftExtension: 438330b80997b69e09968004588ce41d8ff36583
+  GGXSwiftExtension: 9ac2ea6852837d25f5b54ce75301054f3a191d7f
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   PTDebugView: 0d2fa1754062a3cdff8dfba7f29fb061d0b8e95d
   ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
-  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
-  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
-  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  ZKBaseSwiftProject: 25fa44889e03f08d1f7a45a29fa1135cc9c92da8
+  ZKBaseSwiftProject: 66706b38ac16aac5527eac0c132465d7feafeff4
 
 PODFILE CHECKSUM: 15c532f36a0cc8b5a5bd0affdca4114632d86c2d
 
