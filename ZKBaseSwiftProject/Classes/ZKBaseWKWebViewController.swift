@@ -15,6 +15,8 @@ import RxCocoa
 
 public let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
 
+public let kInitialUrlChangeNotifation = "kInitialUrlChangeNotifation"
+
 public protocol WKWebScriptMessageDelegate: NSObjectProtocol {
     
     func zkuserContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage);
