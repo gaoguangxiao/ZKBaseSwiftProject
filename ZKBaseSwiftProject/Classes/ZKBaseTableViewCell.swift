@@ -15,13 +15,13 @@ open class ZKBaseTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpView()
 
-        contentView => lineView
-        lineView.snp.makeConstraints { make in
-            make.bottom.equalTo(-0.5)
-            make.left.equalTo(15)
-            make.right.equalTo(-15)
-            make.height.equalTo(0.5)
-        }
+//        contentView => lineView
+//        lineView.snp.makeConstraints { make in
+//            make.bottom.equalTo(-0.5)
+//            make.left.equalTo(15)
+//            make.right.equalTo(-15)
+//            make.height.equalTo(0.5)
+//        }
     }
     
     required public init?(coder: NSCoder) {
@@ -35,5 +35,5 @@ open class ZKBaseTableViewCell: UITableViewCell {
 //        if yb?.responds(to: <#T##Selector!#>)
     }
     
-    lazy var lineView = UIView()
+//    lazy var lineView = UIView()
 }
