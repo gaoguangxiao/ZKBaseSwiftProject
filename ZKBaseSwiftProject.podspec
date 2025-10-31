@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.4.0'
+    s.version          = '1.4.1'
     s.summary          = 'feat：增加视图绑定view'
     
     # This description is used to generate tags and improve search results.
