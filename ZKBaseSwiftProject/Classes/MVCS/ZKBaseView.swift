@@ -14,7 +14,7 @@ public protocol ZKBaseViewDelegate: NSObjectProtocol {
 
 open class ZKBaseView: UIView {
     
-    public var bindModel: ZKBaseModel?
+    open var bindModel: ZKBaseModel?
     
     public weak var delegatezkView : ZKBaseViewDelegate?
     
