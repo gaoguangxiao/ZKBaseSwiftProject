@@ -14,6 +14,8 @@ public protocol ZKBaseViewDelegate: NSObjectProtocol {
 
 open class ZKBaseView: UIView {
     
+    public var bindModel: ZKBaseModel?
+    
     public weak var delegatezkView : ZKBaseViewDelegate?
     
     public override init(frame: CGRect) {
@@ -32,18 +34,18 @@ struct AssociatedKeys {
     static var bindModelKey: String = "ZKBindModelKey"
 }
 
-extension UIView {
-    
-    var bindModel: ZKBaseModel? {
-        get {
-            objc_getAssociatedObject(self, &AssociatedKeys.bindModelKey) as? ZKBaseModel
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.bindModelKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-}
-
-extension ZKBaseView {
-    
-}
+//public extension UIView {
+//    
+//    var bindModel: ZKBaseModel? {
+//        get {
+//            objc_getAssociatedObject(self, &AssociatedKeys.bindModelKey) as? ZKBaseModel
+//        }
+//        set {
+//            objc_setAssociatedObject(self, &AssociatedKeys.bindModelKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+//        }
+//    }
+//}
+//
+//extension ZKBaseView {
+//    
+//}

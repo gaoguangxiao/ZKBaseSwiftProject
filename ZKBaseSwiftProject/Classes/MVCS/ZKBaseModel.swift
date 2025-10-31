@@ -8,13 +8,14 @@
 import UIKit
 
 @objcMembers
-open class ZKBaseModel: NSObject{
+open class ZKBaseModel: NSObject {
     
+//    @MainActor
     required public override init() { }
 
-    weak var bindView: UIView?
+    public weak var bindView: ZKBaseView?
     
-    func bind(_ view: UIView) {
+    public func bind(_ view: ZKBaseView) {
         if bindView != nil {
             bindView = nil
         }
