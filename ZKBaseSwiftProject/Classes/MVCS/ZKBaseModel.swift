@@ -10,7 +10,6 @@ import UIKit
 @objcMembers
 open class ZKBaseModel: NSObject {
     
-//    @MainActor
     required public override init() { }
 
     public weak var bindView: ZKBaseView?

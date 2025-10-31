@@ -7,10 +7,9 @@
 
 import Foundation
 
-open class ZKBaseViewModel: NSObject {
+open class ZKBaseViewModel<T>: NSObject {
     
-    @MainActor
     required public override init() { }
- 
-    public var bindModel: ZKBaseModel?
+    
+    public var bindModel: T?
 }

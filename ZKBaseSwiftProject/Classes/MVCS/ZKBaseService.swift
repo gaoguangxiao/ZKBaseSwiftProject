@@ -8,15 +8,12 @@
 import UIKit
 
 open class ZKBaseService: NSObject {
-
-    @MainActor
-    public required override init() { }
+    
+    required public override init() { }
     
 //    public var mainModel: ZKBaseModel?
 //    public convenience init(model: ZKBaseModel) {
 //        self.init()
 //        mainModel = model
 //    }
-    
-    
 }
