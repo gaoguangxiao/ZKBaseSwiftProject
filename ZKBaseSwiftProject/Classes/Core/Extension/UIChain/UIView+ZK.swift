@@ -294,6 +294,11 @@ extension UIView {
     @objc open func updateUI(_ model: ZKBaseModel?) {
         
     }
+    
+    /// 初始化视图需要，可UIView()
+    @objc open func initViewUI(_ model: ZKBaseModel?) {
+        
+    }
 }
 
 @objc extension UIView {
