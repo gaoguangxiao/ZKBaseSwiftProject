@@ -10,6 +10,16 @@ import SnapKit
 //代理
 public protocol ZKBaseViewDelegate: NSObjectProtocol {
     func closeView()
+    
+    //本页重新
+    func reloadNetData()
+}
+
+public extension ZKBaseViewDelegate {
+    func closeView(){}
+    
+    //本页重新
+    func reloadNetData(){}
 }
 
 open class ZKBaseView: UIView {
