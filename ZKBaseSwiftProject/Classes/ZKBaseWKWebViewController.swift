@@ -11,6 +11,7 @@ import SnapKit
 import GGXSwiftExtension
 //import PKHUD
 import RxCocoa
+import RxSwift
 //import PTDebugView
 
 public let kWebviewEstimatedProgressValue = "kWebviewEstimatedProgressValue"
@@ -70,7 +71,8 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     }
     
     deinit {
-        print("\(self)dealloc")
+//        print("\(self)dealloc")
+        self.disposeBag = DisposeBag()
     }
     
     open var schemeHandler: Any?
