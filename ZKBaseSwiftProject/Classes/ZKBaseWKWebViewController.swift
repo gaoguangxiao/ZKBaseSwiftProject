@@ -82,7 +82,7 @@ open class ZKBaseWKWebViewController: ZKBaseViewController {
     public lazy var webView: WKWebView = {
         let conf = WKWebViewConfiguration()
         let preferences = WKPreferences.init()
-        preferences.javaScriptCanOpenWindowsAutomatically = true
+        preferences.javaScriptCanOpenWindowsAutomatically = false
         if #available(iOS 13.0, *) {
             let pagePreferences = WKWebpagePreferences()
             if #available(iOS 14.0, *) {
