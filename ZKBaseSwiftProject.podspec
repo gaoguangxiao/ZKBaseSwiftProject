@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZKBaseSwiftProject'
-    s.version          = '1.5.2'
+    s.version          = '1.5.3'
     s.summary          = 'feat：释放进度内存相关'
     
     # This description is used to generate tags and improve search results.
